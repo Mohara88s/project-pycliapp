@@ -3,7 +3,7 @@ from colorama import Fore, init
 import difflib
 
 init(autoreset=True)
-commands = ["hello","add","change","delete","phone","all","add-birthday","show-birthday","birthdays"]
+commands = ["hello","add","change","delete","phone","all","add-birthday","show-birthday","birthdays","close", "exit"]
 
 def suggest_command(user_command):
     matches = difflib.get_close_matches(user_command, commands, n=1, cutoff=0.6)
@@ -11,7 +11,8 @@ def suggest_command(user_command):
 
 def main():
     book = load_addressbook()
-    print("Welcome to the assistant bot!")
+    print("Welcome to the assistant bot! This is available commands:")
+    print(f'{', '.join(commands)}')
     while True:
         try:
             user_input = input(f"Enter a command: {Fore.LIGHTCYAN_EX}")
