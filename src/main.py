@@ -10,7 +10,7 @@ def suggest_command(user_command):
     return matches[0] if matches else None
 
 def main():
-    book = load_data()
+    book = load_addressbook()
     print("Welcome to the assistant bot!")
     while True:
         try:
@@ -18,7 +18,7 @@ def main():
             print(Fore.RESET, end="")
             command, *args = parse_input(user_input)
             if command in ["close", "exit"]:
-                save_data(book)
+                save_addressbook(book)
                 print("Good bye!")
                 break
             elif command == "hello":
@@ -53,6 +53,8 @@ def main():
         except Exception as e:
         # Обробка будь-якого винятку
             error_handler(e)
+        finally:
+            save_addressbook(book)
             
 
 if __name__ == "__main__":
