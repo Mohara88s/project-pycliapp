@@ -9,4 +9,4 @@ dependencies = [
 ]
 
 [project.scripts]
-project-pycliapp = "src.main:main"
+project-pycliapp = "main:main"
