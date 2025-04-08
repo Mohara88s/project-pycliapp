@@ -1,6 +1,6 @@
 from colorama import Fore, init
 from collections import namedtuple
-from components import AddressBook, Record
+from components import AddressBook, Record, Name, Birthday, Phone, Field
 import pickle
 
 init(autoreset=True)
