@@ -4,3 +4,6 @@ class Field:
 
     def __str__(self):
         return str(self.value)
+    
+if __name__ == "__main__":
+    pass

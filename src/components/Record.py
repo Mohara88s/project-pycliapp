@@ -48,3 +48,6 @@ class Record:
 
     def __str__(self):
         return f"Contact name: {self.name.value}, contact birthday:{self.birthday}, phones: {'; '.join(p.value for p in self.phones)}"
+    
+if __name__ == "__main__":
+    pass

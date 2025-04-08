@@ -6,3 +6,6 @@ class Birthday(Field):
         if isinstance(value, str) and re.fullmatch(r'(\d{1}|\d{2}).(\d{1}|\d{2}).\d{4}', value) is not None: 
             self.value = datetime.strptime(value, "%d.%m.%Y").date()
         else: raise ValueError("Invalid date format. Use DD.MM.YYYY")
+
+if __name__ == "__main__":
+    pass
