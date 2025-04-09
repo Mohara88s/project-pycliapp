@@ -28,10 +28,16 @@ def show_birthday(args, book: AddressBook):
     return colorize_message(res, "GREEN")
 
 
-def get_upcoming_birthdays(book: AddressBook):
+def get_upcoming_birthdays(args, book: AddressBook):
+    days=365
+    if len(args)>0:
+        try:
+            days = int(args[0])
+        except:
+            raise Exception("Days must be a positive integer")
     list_of_birthdays = []
     Birthday_tuple = namedtuple('Birthday_tuple', ['name', 'birthday'])
-    for contact in book.get_upcoming_birthdays():
+    for contact in book.get_upcoming_birthdays(days):
         list_of_birthdays.append(Birthday_tuple(contact.get('name'), contact.get('congratulation_date')))
     return list_of_birthdays
     

@@ -1,5 +1,5 @@
 from collections import UserDict
-from datetime import datetime, timedelta
+from datetime import datetime
 from components.Record import Record
 from components.Name import Name
 from components.Phone import Phone
@@ -24,8 +24,10 @@ class AddressBook(UserDict):
     @property
     def get_all_records(self):
         return self.data
-    
-    def get_upcoming_birthdays(self):
+
+    def get_upcoming_birthdays(self, days_to_bd:int)->list:
+        if not isinstance(days_to_bd, int) or days_to_bd <= 0:
+            raise Exception("Days must be a positive integer")
         records_to_congr = []
         today = datetime.today().date()
         for name, record in self.data.items():
@@ -34,53 +36,10 @@ class AddressBook(UserDict):
                 if today < date_of_birth: continue
                 birthday_this_year = date_of_birth.replace(year=today.year)
                 next_bd = date_of_birth.replace(year=today.year + 1) if birthday_this_year < today else birthday_this_year  
-                if next_bd.toordinal() - today.toordinal() <= 7:    
-                    bday_of_week = next_bd.weekday()
-                    if bday_of_week == 5:
-                        next_bd = next_bd + timedelta(days = 2)
-                    if bday_of_week == 6:
-                        next_bd = next_bd + timedelta(days = 1)
+                if next_bd.toordinal() - today.toordinal() <= days_to_bd:    
                     congratulation_date = next_bd.strftime("%d.%m.%Y")
                     records_to_congr.append({"name":name, "congratulation_date":congratulation_date})
-        return records_to_congr
-    
-    def search(self, search_term: str, search_type: str = 'name'):
-        results = []
-        search_term = search_term.lower().strip()  # Нормалізуємо пошуковий термін
-    
-        for record in self.data.values():
-            # Пошук за ім'ям (1)
-            if search_type == 'name' and search_term in record.name.value.lower():
-                results.append(record)
-        
-            # Пошук за телефоном (2)
-            elif search_type == 'phone':
-                for phone in record.phones:
-                    # Видаляємо всі нецифрові символи для порівняння
-                    clean_phone = ''.join(c for c in phone.value if c.isdigit())
-                    clean_search = ''.join(c for c in search_term if c.isdigit())
-                    if clean_search in clean_phone:
-                        results.append(record)
-                        break
-        
-            # Пошук за датою народження (3)
-            elif search_type == 'birthday' and record.birthday:
-                # Приведення формату дати до спільного стандарту
-                try:
-                    bd_date = datetime.strptime(record.birthday.value, "%Y-%m-%d").strftime("%d.%m.%Y")
-                    if search_term in bd_date:
-                        results.append(record)
-                except ValueError:
-                    continue
-        
-            # Пошук за email (4)
-            elif search_type == 'email' and hasattr(record, 'email') and record.email:
-                if search_term in record.email.lower():
-                    results.append(record)
-    
-        return results
-    
-
+        return sorted(records_to_congr, key=lambda x: datetime.strptime(x["congratulation_date"], "%d.%m.%Y"), reverse=False)
 
 if __name__ == "__main__":
     try:

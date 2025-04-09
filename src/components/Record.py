@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 from components.Name import Name
 from components.Phone import Phone
 from components.Birthday import Birthday
@@ -46,6 +46,7 @@ class Record:
     
     def add_birthday(self, birthday_str):
         self.birthday=Birthday(birthday_str)
+
 
     def __str__(self):
         return f"Contact name: {self.name.value}, contact birthday:{self.birthday}, phones: {'; '.join(p.value for p in self.phones)}"
