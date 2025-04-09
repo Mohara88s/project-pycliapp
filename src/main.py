@@ -1,4 +1,5 @@
 from utility import *
+from utility.show_search import show_search
 import difflib
 
 def main():
@@ -38,6 +39,11 @@ def main():
         "birthdays": {
             "handler": lambda args: show_birthdays(get_upcoming_birthdays(args, book)),
             "description": "Show upcoming birthdays in the format [birthdays LIMIT_OF_DAYS_UNTIL_BIRTHDAY]"
+        },
+        "search": {
+            "handler": lambda args: print(show_search(args, book)),
+            "description": "Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: [search TYPE VALUE] or [search] for interactive mode"
+
         },
         "help": {
             "handler": lambda args: show_help(),

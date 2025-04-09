@@ -40,6 +40,40 @@ class AddressBook(UserDict):
                     congratulation_date = next_bd.strftime("%d.%m.%Y")
                     records_to_congr.append({"name":name, "congratulation_date":congratulation_date})
         return sorted(records_to_congr, key=lambda x: datetime.strptime(x["congratulation_date"], "%d.%m.%Y"), reverse=False)
+    
+    def search(self, search_term: str, search_type: str = 'name'):
+        result_dict = {}  # Використовуємо словник замість списку
+        search_term = search_term.strip().lower()
+        
+        for record in self.data.values():
+            # Пошук за ім'ям
+            if search_type == 'name' and search_term in record.name.value.lower():
+                result_dict[record.name.value] = record
+            
+            # Пошук за телефоном
+            elif search_type == 'phone':
+                for phone in record.phones:
+                    if search_term in phone.value:
+                        result_dict[record.name.value] = record
+                        break
+            
+            # Пошук за датою народження
+            elif search_type == 'birthday' and record.birthday:
+                try:
+                    bd_date = record.get_birthday
+                    if search_term in bd_date:
+                        result_dict[record.name.value] = record
+                except (ValueError, AttributeError):
+                    continue
+            
+            # Пошук за email
+            elif search_type == 'email' and hasattr(record, 'email') and record.email:
+                if search_term.lower() in str(record.email).lower():
+                    result_dict[record.name.value] = record
+        
+        return result_dict  # Повертаємо словник
+    
+       
 
 if __name__ == "__main__":
     try:
