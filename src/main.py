@@ -31,22 +31,13 @@ def main():
             elif command == "phone":
                 print(', '.join(show_phone(args, book)))
             elif command == "all":
-                print(colorize_message(f"{"Name":<20}{"Phone":<15}", "MAGENTA"))
-                for i, contact in enumerate(show_all(book)):
-                    print(colorize_message(f"{contact.name:<20}{'\n                    '.join(contact.phones)}", f"{"CYAN" if i%2==0 else "BLUE"}"))
+                show_all_contacts(get_all_contacts(book))
             elif command == "add-birthday":
                 print(add_birthday(args, book))
             elif command == "show-birthday":
                 print(show_birthday(args, book))
             elif command == "birthdays":
-                result = birthdays(book)
-                if result:
-                    print(colorize_message(f"{'Name':<20}{'Birthday':<15}", "MAGENTA"))
-                    for i, contact in enumerate(result):
-                        print(colorize_message(f"{contact.name:<20}{contact.birthday}",
-                                               f"{'CYAN' if i % 2 == 0 else 'BLUE'}"))
-                else:
-                    print(colorize_message("No upcoming birthdays found.", "YELLOW"))
+                show_birthdays(get_upcoming_birthdays((book)))
             else:
                 suggestion = suggest_command(command)
                 if suggestion:

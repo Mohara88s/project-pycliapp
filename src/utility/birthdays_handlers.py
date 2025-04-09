@@ -23,14 +23,13 @@ def show_birthday(args, book: AddressBook):
     if record is None:
         raise Exception(f"The contact {name} is not found")
     res = record.get_birthday
+    if not res:
+        raise Exception(f"The birthday is not found")
     return colorize_message(res, "GREEN")
 
 
-def birthdays(book):
-    try:
-        days = int(input("Enter number of days to look ahead: "))
-    except ValueError:
-        return colorize_message("Please enter a valid number!", "RED")
+def get_upcoming_birthdays(book: AddressBook):
+    list_of_birthdays = []
 
     Birthday_tuple = namedtuple('Birthday_tuple', ['name', 'birthday'])
     result = []

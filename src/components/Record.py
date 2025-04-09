@@ -37,17 +37,8 @@ class Record:
     
     @property
     def get_birthday(self):
-        if self.birthday:
-            value = self.birthday.value
-            if isinstance(value, date):
-                return value.strftime("%d.%m.%Y")
-            elif isinstance(value, str):
-                try:
-                    birthday_date = datetime.strptime(value, "%d.%m.%Y")
-                    return birthday_date.strftime("%d.%m.%Y")
-                except ValueError:
-                    raise Exception("Invalid birthday format. Use DD.MM.YYYY")
-        raise Exception("The birthday is not found")
+        birthday_date = datetime.strptime(str(self.birthday), "%Y-%m-%d").strftime("%d.%m.%Y") if self.birthday else None
+        return birthday_date
     
     def add_birthday(self, birthday_str):
         self.birthday=Birthday(birthday_str)
