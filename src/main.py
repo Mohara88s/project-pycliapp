@@ -1,9 +1,10 @@
 from utility import *
+from utility.search_contacts import search_contacts
 from colorama import Fore, init
 import difflib
 
 init(autoreset=True)
-commands = ["hello","add","change","delete","phone","all","add-birthday","show-birthday","birthdays","close", "exit"]
+commands = ["hello","add","change","delete","phone","all","add-birthday","show-birthday","birthdays","close", "exit","search"]
 
 def suggest_command(user_command):
     matches = difflib.get_close_matches(user_command, commands, n=1, cutoff=0.6)
@@ -38,6 +39,8 @@ def main():
                 print(show_birthday(args, book))
             elif command == "birthdays":
                 show_birthdays(get_upcoming_birthdays((book)))
+            elif command == "search":
+                print(search_contacts(args, book))
             else:
                 suggestion = suggest_command(command)
                 if suggestion:

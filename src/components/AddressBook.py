@@ -44,6 +44,42 @@ class AddressBook(UserDict):
                     records_to_congr.append({"name":name, "congratulation_date":congratulation_date})
         return records_to_congr
     
+    def search(self, search_term: str, search_type: str = 'name'):
+        results = []
+        search_term = search_term.lower().strip()  # Нормалізуємо пошуковий термін
+    
+        for record in self.data.values():
+            # Пошук за ім'ям (1)
+            if search_type == 'name' and search_term in record.name.value.lower():
+                results.append(record)
+        
+            # Пошук за телефоном (2)
+            elif search_type == 'phone':
+                for phone in record.phones:
+                    # Видаляємо всі нецифрові символи для порівняння
+                    clean_phone = ''.join(c for c in phone.value if c.isdigit())
+                    clean_search = ''.join(c for c in search_term if c.isdigit())
+                    if clean_search in clean_phone:
+                        results.append(record)
+                        break
+        
+            # Пошук за датою народження (3)
+            elif search_type == 'birthday' and record.birthday:
+                # Приведення формату дати до спільного стандарту
+                try:
+                    bd_date = datetime.strptime(record.birthday.value, "%Y-%m-%d").strftime("%d.%m.%Y")
+                    if search_term in bd_date:
+                        results.append(record)
+                except ValueError:
+                    continue
+        
+            # Пошук за email (4)
+            elif search_type == 'email' and hasattr(record, 'email') and record.email:
+                if search_term in record.email.lower():
+                    results.append(record)
+    
+        return results
+    
 
 
 if __name__ == "__main__":
