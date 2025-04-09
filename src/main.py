@@ -85,7 +85,7 @@ def main():
                     print(colorize_message(f"Unknown command: '{command}'. Did you mean '{' or '.join(suggestion)}'?", "YELLOW"))
 
                 else:
-                    print(colorize_message(f"Invalid command: '{command}'.", "YELLOW"))  
+                    print(colorize_message(f"Invalid command: '{command}'. You can try the 'help' command.", "YELLOW"))  
         except Exception as e:
         # Обробка будь-якого винятку
             error_handler(e)
