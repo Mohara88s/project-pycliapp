@@ -39,9 +39,14 @@ def main():
             elif command == "show-birthday":
                 print(show_birthday(args, book))
             elif command == "birthdays":
-                print(colorize_message(f"{"Name":<20}{"Birthday":<15}", "MAGENTA"))
-                for i, contact in enumerate(birthdays(book)):
-                    print(colorize_message(f"{contact.name:<20}{contact.birthday}", f"{"CYAN" if i%2==0 else "BLUE"}"))
+                result = birthdays(book)
+                if result:
+                    print(colorize_message(f"{'Name':<20}{'Birthday':<15}", "MAGENTA"))
+                    for i, contact in enumerate(result):
+                        print(colorize_message(f"{contact.name:<20}{contact.birthday}",
+                                               f"{'CYAN' if i % 2 == 0 else 'BLUE'}"))
+                else:
+                    print(colorize_message("No upcoming birthdays found.", "YELLOW"))
             else:
                 suggestion = suggest_command(command)
                 if suggestion:

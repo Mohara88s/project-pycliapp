@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 from components.Name import Name
 from components.Phone import Phone
 from components.Birthday import Birthday
@@ -37,14 +37,34 @@ class Record:
     
     @property
     def get_birthday(self):
-        if self.birthday:   
-            birthday_date = datetime.strptime(str(self.birthday), "%Y-%m-%d").strftime("%d.%m.%Y")
-        else:
-            raise Exception(f"The birthday is not found")
-        return birthday_date
+        if self.birthday:
+            value = self.birthday.value
+            if isinstance(value, date):
+                return value.strftime("%d.%m.%Y")
+            elif isinstance(value, str):
+                try:
+                    birthday_date = datetime.strptime(value, "%d.%m.%Y")
+                    return birthday_date.strftime("%d.%m.%Y")
+                except ValueError:
+                    raise Exception("Invalid birthday format. Use DD.MM.YYYY")
+        raise Exception("The birthday is not found")
     
     def add_birthday(self, birthday_str):
         self.birthday=Birthday(birthday_str)
+
+    def get_birthday_date(self):
+        if not self.birthday or not getattr(self.birthday, "value", None):
+            return None
+
+        value = self.birthday.value
+
+        if isinstance(value, date):
+            return value
+
+        try:
+            return datetime.strptime(value, "%d.%m.%Y").date()
+        except ValueError:
+            return None
 
     def __str__(self):
         return f"Contact name: {self.name.value}, contact birthday:{self.birthday}, phones: {'; '.join(p.value for p in self.phones)}"

@@ -26,12 +26,19 @@ def show_birthday(args, book: AddressBook):
     return colorize_message(res, "GREEN")
 
 
-def birthdays(book: AddressBook):
-    list_of_birthdays = []
+def birthdays(book):
+    try:
+        days = int(input("Enter number of days to look ahead: "))
+    except ValueError:
+        return colorize_message("Please enter a valid number!", "RED")
+
     Birthday_tuple = namedtuple('Birthday_tuple', ['name', 'birthday'])
-    for contact in book.get_upcoming_birthdays():
-        list_of_birthdays.append(Birthday_tuple(contact.get('name'), contact.get('congratulation_date')))
-    return list_of_birthdays
+    result = []
+
+    for record in book.get_upcoming_birthdays(days):
+        result.append(Birthday_tuple(record.name.value, record.birthday.value))
+
+    return result
     
 if __name__ == "__main__":
     pass
