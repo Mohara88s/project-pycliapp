@@ -1,5 +1,8 @@
 from utility import *
 from utility.show_search import show_search
+from components.Notes import NotesBook
+from utility.storage_handlers import load_notes, save_notes
+from utility.notes_handlers import add_note, show_notes, show_note, delete_note, edit_note
 import difflib
 
 def main():
@@ -43,7 +46,26 @@ def main():
         "search": {
             "handler": lambda args: print(show_search(args, book)),
             "description": "Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: [search TYPE VALUE] or [search] for interactive mode"
-
+        },
+        "add-note": {
+            "handler": lambda args: print(add_note(args, notes_book)),
+            "description": "Add Note [add-note TITLE \"CONTENT\" TAG]"
+        },
+        "show-note": {
+            "handler": lambda args: print(show_note(args, notes_book)),
+            "description": "Show note by title [show-note TITLE]"
+        },
+        "show-notes": {
+            "handler": lambda args: print(show_notes(args, notes_book)),
+            "description": "Show all notes [show-notes]"
+        },
+        "edit-note": {
+            "handler": lambda args: print(edit_note(args, notes_book)),
+            "description": "Edit a note [edit-note OLD_TITLE NEW_TITLE \"NEW_CONTENT\" NEW_TAG]"
+        },
+        "delete-note": {
+            "handler": lambda args: print(delete_note(args, notes_book)),
+            "description": "Delete note by title [delete-note TITLE]"
         },
         "help": {
             "handler": lambda args: show_help(),
@@ -58,29 +80,32 @@ def main():
             "description": "Сlose the application in the format [exit]"
         }
     }
+
     exit_commands = ["close", "exit"]
 
     def suggest_command(user_command):
         matches = difflib.get_close_matches(user_command, commands.keys(), n=3, cutoff=0.6)
         print(matches)
         return matches if matches else None
-    
+
     def show_help():
         print("This is available commands:")
         for name, info in commands.items():
             print(f"  {name:<15} - {info['description']}")
 
-
     book = load_addressbook()
+    notes_book = load_notes()
     print("Welcome to the assistant bot! If this is your first time, type 'help'.")
+
     while True:
         try:
             command, *args = parse_input(user_input_handler())
             command_data = commands.get(command)
-                
+
             if command in exit_commands:
                 command_data["handler"](args)
                 save_addressbook(book)
+                save_notes(notes_book)
                 break
 
             if command_data:
@@ -89,15 +114,14 @@ def main():
                 suggestion = suggest_command(command)
                 if suggestion:
                     print(colorize_message(f"Unknown command: '{command}'. Did you mean '{' or '.join(suggestion)}'?", "YELLOW"))
-
                 else:
-                    print(colorize_message(f"Invalid command: '{command}'. You can try the 'help' command.", "YELLOW"))  
+                    print(colorize_message(f"Invalid command: '{command}'. You can try the 'help' command.", "YELLOW"))
+
         except Exception as e:
-        # Обробка будь-якого винятку
             error_handler(e)
         finally:
             save_addressbook(book)
-            
+            save_notes(notes_book)
 
 if __name__ == "__main__":
     main()
