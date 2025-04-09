@@ -37,7 +37,7 @@ def main():
             elif command == "show-birthday":
                 print(show_birthday(args, book))
             elif command == "birthdays":
-                show_birthdays(get_upcoming_birthdays((book)))
+                show_birthdays(get_upcoming_birthdays(args, book))
             else:
                 suggestion = suggest_command(command)
                 if suggestion:

@@ -1,5 +1,5 @@
 from collections import UserDict
-from datetime import date, datetime, timedelta
+from datetime import datetime
 from components.Record import Record
 from components.Name import Name
 from components.Phone import Phone
@@ -25,23 +25,21 @@ class AddressBook(UserDict):
     def get_all_records(self):
         return self.data
 
-    def get_upcoming_birthdays(self, days: int) -> list:
-        today = date.today()
-        end_date = today + timedelta(days=days)
-        upcoming = []
-        seen = set()
-
-        for record in self.data.values():
-            birthday = record.get_birthday_date()
-            if birthday:
-                this_year_birthday = birthday.replace(year=today.year)
-                if today <= this_year_birthday <= end_date:
-                    key = record.name.value
-                    if key not in seen:
-                        seen.add(key)
-                        upcoming.append(record)
-
-        return upcoming
+    def get_upcoming_birthdays(self, days_to_bd:int)->list:
+        if not isinstance(days_to_bd, int) or days_to_bd <= 0:
+            raise Exception("Days must be a positive integer")
+        records_to_congr = []
+        today = datetime.today().date()
+        for name, record in self.data.items():
+            if record.birthday:
+                date_of_birth = datetime.strptime(f"{record.birthday}", "%Y-%m-%d").date()
+                if today < date_of_birth: continue
+                birthday_this_year = date_of_birth.replace(year=today.year)
+                next_bd = date_of_birth.replace(year=today.year + 1) if birthday_this_year < today else birthday_this_year  
+                if next_bd.toordinal() - today.toordinal() <= days_to_bd:    
+                    congratulation_date = next_bd.strftime("%d.%m.%Y")
+                    records_to_congr.append({"name":name, "congratulation_date":congratulation_date})
+        return sorted(records_to_congr, key=lambda x: datetime.strptime(x["congratulation_date"], "%d.%m.%Y"), reverse=False)
 
 if __name__ == "__main__":
     try:
