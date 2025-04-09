@@ -37,11 +37,11 @@ def delete_contact(args, book: AddressBook):
     message = "Contact deleted"
     return colorize_message(message, "GREEN")
 
-def show_all(book: AddressBook):
+def get_all_contacts(book: AddressBook):
     list_of_contacts = []
-    Contact_tuple = namedtuple('Contact', ['name', 'phones'])
+    Contact_tuple = namedtuple('Contact', ['name', 'phones','birthday'])
     for name, record in book.get_all_records.items():
-        list_of_contacts.append(Contact_tuple(name, record.get_phones))
+        list_of_contacts.append(Contact_tuple(name, record.get_phones, record.get_birthday))
     return sorted(list_of_contacts)
 
 

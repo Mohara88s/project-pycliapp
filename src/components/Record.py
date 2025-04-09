@@ -37,10 +37,7 @@ class Record:
     
     @property
     def get_birthday(self):
-        if self.birthday:   
-            birthday_date = datetime.strptime(str(self.birthday), "%Y-%m-%d").strftime("%d.%m.%Y")
-        else:
-            raise Exception(f"The birthday is not found")
+        birthday_date = datetime.strptime(str(self.birthday), "%Y-%m-%d").strftime("%d.%m.%Y") if self.birthday else None
         return birthday_date
     
     def add_birthday(self, birthday_str):
