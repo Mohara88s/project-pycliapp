@@ -15,9 +15,7 @@ def main():
     print(f'{', '.join(commands)}')
     while True:
         try:
-            user_input = input(f"Enter a command: {Fore.LIGHTCYAN_EX}")
-            print(Fore.RESET, end="")
-            command, *args = parse_input(user_input)
+            command, *args = parse_input(user_input_handler())
             if command in ["close", "exit"]:
                 save_addressbook(book)
                 print("Good bye!")
