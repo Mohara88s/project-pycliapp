@@ -23,9 +23,12 @@ from utility.notes_handlers import show_note
 from utility.notes_handlers import delete_note
 from utility.notes_handlers import edit_note
 from utility.notes_search_handlers import search_notes
-from utility.print_notes import print_notes
+from utility.notes_search_handlers import search_and_group_notes_by_tag
+from utility.notes_print_handlers import notes_print
+from utility.notes_print_handlers import tags_with_notes_print
 from utility.show_help import show_help
 from utility.suggest_command import suggest_command
+
 
 
 __all__ = ['parse_input', 
@@ -53,7 +56,9 @@ __all__ = ['parse_input',
            'delete_note',
            'edit_note',
            'search_notes',
-           'print_notes',
+           'notes_print',
+           'tags_with_notes_print',
+           'search_and_group_notes_by_tag',
            'show_help',
            'suggest_command',
            ]

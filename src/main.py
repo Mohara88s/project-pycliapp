@@ -44,27 +44,31 @@ def main():
         },
         "add-note": {
             "handler": lambda args: print(add_note(args, notes_book)),
-            "description": "Add note [add-note TITLE \"CONTENT\" TAG]"
+            "description": "Add note in the format [add-note TITLE \"CONTENT\" TAG]"
         },
         "note": {
             "handler": lambda args: print(show_note(args, notes_book)),
-            "description": "Show note by title [note TITLE]"
+            "description": "Show note by title in the format [note TITLE]"
         },
         "all-notes": {
             "handler": lambda args: print(show_notes(args, notes_book)),
-            "description": "Show all notes [all-notes]"
+            "description": "Show all notes in the format [all-notes]"
         },
         "edit-note": {
             "handler": lambda args: print(edit_note(args, notes_book)),
-            "description": "Edit a note [edit-note OLD_TITLE NEW_TITLE \"NEW_CONTENT\" NEW_TAG]"
+            "description": "Edit note in the format [edit-note OLD_TITLE NEW_TITLE \"NEW_CONTENT\" NEW_TAG]"
         },
         "delete-note": {
             "handler": lambda args: print(delete_note(args, notes_book)),
-            "description": "Delete note by title [delete-note TITLE]"
+            "description": "Delete note by title in the format [delete-note TITLE]"
         },
         "search-note": {
-            "handler": lambda args: print_notes(search_notes(args, notes_book)),
-            "description": "Search note"
+            "handler": lambda args: notes_print(search_notes(args, notes_book)),
+            "description": "Search notes by title, tags or query in the format (title: TITLE or tags: TAGS or QUERY)"
+        },
+        "search-notes-by-tag": {
+            "handler": lambda args: tags_with_notes_print(search_and_group_notes_by_tag(args, notes_book)),
+            "description": "Search sorted tags which are similar to query and connectet to them notes in the format [search-notes-by-tag QUERY]"
         },
         "help": {
             "handler": lambda args: show_help(commands),
