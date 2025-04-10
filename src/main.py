@@ -64,7 +64,7 @@ def main():
         },
         "search-note": {
             "handler": lambda args: notes_print(search_notes(args, notes_book)),
-            "description": "Search notes by title, tags or query in the format (title: TITLE or tags: TAGS or QUERY)"
+            "description": "Search notes by title, tags or query in the format [search-note title: TITLE] or [search-note tags: TAGS] or [search-note QUERY]"
         },
         "search-notes-by-tag": {
             "handler": lambda args: tags_with_notes_print(search_and_group_notes_by_tag(args, notes_book)),

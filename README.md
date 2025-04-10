@@ -81,25 +81,27 @@ This temporarily adds the path for the current session. To make it permanent, ei
 
 ## 💬 Commands
 
-| Command          | Description                                                                                                                                 |
-|------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| `hello`          | Greet the bot                                                                                                                               |
-| `add-contact`    | Add a new contact or a new phone to the contact in the format `add-contact NAME PHONE`                                                      |
-| `all-contacts`   | Show all contacts in detail in the format `all-contacts`                                                                                    |
-| `delete-contact` | Delete contact in the format `delete-contact NAME`                                                                                          |
-| `search-contact` | Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: `search-contact TYPE VALUE` or `search-contact` for interactive mode  |
-| `phone`          | Show available phone numbers by name in the format `phone NAME`                                                                             |
-| `edit-phone`     | Change contact phone number in the format `edit-phone NAME OLD_PHONE NEW_PHONE`                                                             |
-| `add-birthday`   | Add date of birth to a contact in the format `add-birthday NAME DD.MM.YYYY`                                                                 |
-| `birthday`       | Show contact's date of birth in the format `birthday NAME`                                                                                  |
-| `birthdays`      | Show upcoming birthdays in the format `birthdays LIMIT_OF_DAYS_UNTIL_BIRTHDAY`                                                              |
-| `add-note`       | Add note `add-note TITLE \"CONTENT\" TAG`                                                                                                   |
-| `note`           | Show note by title `note TITLE`                                                                                                             |
-| `all-notes`      | Show all notes `all-notes`                                                                                                                  |
-| `edit-note`      | Edit a note `edit-note OLD_TITLE NEW_TITLE \"NEW_CONTENT\" NEW_TAG`                                                                         |
-| `delete-note`    | Delete note by title `delete-note TITLE`                                                                                                    |
-| `help`           | Show list of available commands in the format                                                                                               |
-| `close` / `exit` | Exit the assistant                                                                                                                          |
+| Command                 | Description                                                                                                                                 |
+|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `hello`                 | Greet the bot                                                                                                                               |
+| `add-contact`           | Add a new contact or a new phone to the contact in the format `add-contact NAME PHONE`                                                      |
+| `all-contacts`          | Show all contacts in detail in the format `all-contacts`                                                                                    |
+| `delete-contact`        | Delete contact in the format `delete-contact NAME`                                                                                          |
+| `search-contact`        | Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: `search-contact TYPE VALUE` or `search-contact` for interactive mode  |
+| `phone`                 | Show available phone numbers by name in the format `phone NAME`                                                                             |
+| `edit-phone`            | Change contact phone number in the format `edit-phone NAME OLD_PHONE NEW_PHONE`                                                             |
+| `add-birthday`          | Add date of birth to a contact in the format `add-birthday NAME DD.MM.YYYY`                                                                 |
+| `birthday`              | Show contact's date of birth in the format `birthday NAME`                                                                                  |
+| `birthdays`             | Show upcoming birthdays in the format `birthdays LIMIT_OF_DAYS_UNTIL_BIRTHDAY`                                                              |
+| `add-note`              | Add note `add-note TITLE \"CONTENT\" TAG`                                                                                                   |
+| `note`                  | Show note by title `note TITLE`                                                                                                             |
+| `all-notes`             | Show all notes `all-notes`                                                                                                                  |
+| `edit-note`             | Edit a note `edit-note OLD_TITLE NEW_TITLE \"NEW_CONTENT\" NEW_TAG`                                                                         |
+| `delete-note`           | Delete note by title `delete-note TITLE`                                                                                                    |
+| `search-note`           | Search notes by title, tags or query in the format [search-note title: TITLE] or [search-note tags: TAGS] or [search-note QUERY]            |
+| `search-notes-by-tag`   | Search sorted tags which are similar to query and connectet to them notes in the format [search-notes-by-tag QUERY]                         |
+| `help`                  | Show list of available commands in the format                                                                                               |
+| `close` / `exit`        | Exit the assistant                                                                                                                          |
 
 ---
 
