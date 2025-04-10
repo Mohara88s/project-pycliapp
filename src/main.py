@@ -81,7 +81,6 @@ def main():
 
     def suggest_command(user_command):
         matches = difflib.get_close_matches(user_command, commands.keys(), n=3, cutoff=0.6)
-        print(matches)
         return matches if matches else None
 
     def show_help():
