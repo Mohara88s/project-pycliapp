@@ -28,6 +28,8 @@ from utility.notes_print_handlers import notes_print
 from utility.notes_print_handlers import tags_with_notes_print
 from utility.show_help import show_help
 from utility.suggest_command import suggest_command
+from utility.contact_handlers import add_email, add_address
+from utility.contact_handlers import edit_email, edit_address, edit_name, edit_birthday
 
 
 
@@ -61,4 +63,10 @@ __all__ = ['parse_input',
            'search_and_group_notes_by_tag',
            'show_help',
            'suggest_command',
+           'add_email', 
+           'add_address',
+           'edit_email',
+           'edit_name',
+           'edit_address',
+           'edit_birthday',
            ]
