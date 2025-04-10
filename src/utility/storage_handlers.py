@@ -1,5 +1,4 @@
-from components import AddressBook
-from components.Notes import NotesBook
+from components import AddressBook, NotesBook
 import pickle
 
 def save_addressbook(book, filename="addressbook.pkl"):

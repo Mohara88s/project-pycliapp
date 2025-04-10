@@ -1,8 +1,4 @@
 from utility import *
-from utility.show_search import show_search
-from components.Notes import NotesBook
-from utility.storage_handlers import load_notes, save_notes
-from utility.notes_handlers import add_note, show_notes, show_note, delete_note, edit_note
 import difflib
 
 def main():
@@ -116,7 +112,7 @@ def main():
                     print(colorize_message(f"Unknown command: '{command}'. Did you mean '{' or '.join(suggestion)}'?", "YELLOW"))
                 else:
                     print(colorize_message(f"Invalid command: '{command}'. You can try the 'help' command.", "YELLOW"))
-
+        # Catch all exceptions
         except Exception as e:
             error_handler(e)
         finally:

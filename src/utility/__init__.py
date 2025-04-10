@@ -11,9 +11,19 @@ from utility.birthdays_handlers import get_upcoming_birthdays
 from utility.error_handler import error_handler
 from utility.storage_handlers import save_addressbook
 from utility.storage_handlers import load_addressbook
+from utility.storage_handlers import save_addressbook
+from utility.storage_handlers import load_addressbook
 from utility.user_input_handler import user_input_handler
 from utility.show_all_contacts import show_all_contacts
 from utility.show_birthdays import show_birthdays
+from utility.notes_handlers import add_note
+from utility.notes_handlers import show_notes
+from utility.notes_handlers import show_note
+from utility.notes_handlers import delete_note
+from utility.notes_handlers import edit_note
+from utility.show_search import show_search
+
+
 
 __all__ = ['parse_input', 
            'add_contact', 
@@ -28,7 +38,15 @@ __all__ = ['parse_input',
            'error_handler',
            'save_addressbook',
            'load_addressbook',
+           'save_notes',
+           'load_notes',
            'user_input_handler',
            'show_all_contacts',
            'show_birthdays',
+           'add_note',
+           'show_notes',
+           'show_note',
+           'delete_note',
+           'edit_note',
+           'show_search'
            ]

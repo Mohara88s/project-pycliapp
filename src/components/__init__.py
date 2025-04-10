@@ -4,4 +4,7 @@ from components.Birthday import Birthday
 from components.Phone import Phone
 from components.Name import Name
 from components.Field import Field
-__all__ = ['AddressBook', 'Record', 'Birthday', 'Phone', 'Name', 'Field']
+from components.Note import Note
+from components.NotesBook import NotesBook
+
+__all__ = ['AddressBook', 'Record', 'Birthday', 'Phone', 'Name', 'Field', 'Note', 'NotesBook',]
