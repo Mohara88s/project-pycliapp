@@ -4,7 +4,7 @@ def main():
     commands = {
         "hello": {
             "handler": lambda args: print("How can I help you?"),
-            "description": "Say hello to the bot"
+            "description": "Greet the bot"
         },
         "add-contact": {
             "handler": lambda args: print(add_contact(args, book)),
@@ -20,7 +20,7 @@ def main():
         },
         "search-contact": {
             "handler": lambda args: print(show_search(args, book)),
-            "description": "Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: [search-contact TYPE VALUE] or [search] for interactive mode"
+            "description": "Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: [search-contact TYPE VALUE] or [search-contact] for interactive mode"
         },
         "phone": {
             "handler": lambda args: print(', '.join(show_phone(args, book))),
@@ -44,7 +44,7 @@ def main():
         },
         "add-note": {
             "handler": lambda args: print(add_note(args, notes_book)),
-            "description": "Add Note [add-note TITLE \"CONTENT\" TAG]"
+            "description": "Add note [add-note TITLE \"CONTENT\" TAG]"
         },
         "note": {
             "handler": lambda args: print(show_note(args, notes_book)),
