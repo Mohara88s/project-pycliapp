@@ -2,6 +2,8 @@ from datetime import datetime, date
 from components.Name import Name
 from components.Phone import Phone
 from components.Birthday import Birthday
+from components.Email import Email
+from components.Address import Address
  
 class Record:
     def __init__(self, name):
@@ -9,6 +11,8 @@ class Record:
         self.phones = [] 
         self.birthday = None
         self.email = None
+        self.address = None
+
 
     @property
     def get_phones(self):
@@ -47,9 +51,15 @@ class Record:
     def add_birthday(self, birthday_str):
         self.birthday=Birthday(birthday_str)
 
+    def add_email(self, email_str):
+        self.email = Email(email_str)
+
+    def add_address(self, address_str):
+        self.address = Address(address_str)    
+
 
     def __str__(self):
-        return f"Contact name: {self.name.value}, contact birthday:{self.birthday}, phones: {'; '.join(p.value for p in self.phones)}"
+        return f"Contact name: {self.name.value}, contact birthday:{self.birthday}, phones: {'; '.join(p.value for p in self.phones)}, email: {self.email}, address: {self.address}"
     
 if __name__ == "__main__":
     pass
