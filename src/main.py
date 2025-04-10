@@ -80,7 +80,7 @@ def main():
     exit_commands = ["close", "exit"]
 
     def suggest_command(user_command):
-        matches = difflib.get_close_matches(user_command, commands.keys(), n=3, cutoff=0.6)
+        matches = difflib.get_close_matches(user_command, commands.keys(), n=5, cutoff=0.2)
         return matches if matches else None
 
     def show_help():
