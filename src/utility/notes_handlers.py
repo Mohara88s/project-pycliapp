@@ -14,7 +14,7 @@ def add_note(args, notes_book):
 
 def show_note(args, notes_book):
     if len(args) < 1:
-        return colorize_message("Please provide the note title", "RED")
+        raise ValueError("Please provide the note title")
 
     title = args[0]
     for note in notes_book.all_notes():
@@ -68,3 +68,6 @@ def edit_note(args, notes_book):
 
     notes_book.edit_note(old_title, new_title, new_content, new_tag)
     return colorize_message(f"Note '{old_title}' edited successfully.", "GREEN")
+
+if __name__ == "__main__":
+    pass

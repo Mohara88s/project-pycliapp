@@ -68,3 +68,6 @@ def show_search(args, book: AddressBook):
         result_text += "\n" + contact
     
     return result_text
+
+if __name__ == "__main__":
+    pass

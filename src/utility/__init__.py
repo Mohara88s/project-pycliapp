@@ -16,12 +16,14 @@ from utility.storage_handlers import load_notes
 from utility.user_input_handler import user_input_handler
 from utility.show_all_contacts import show_all_contacts
 from utility.show_birthdays import show_birthdays
+from utility.show_search import show_search
 from utility.notes_handlers import add_note
 from utility.notes_handlers import show_notes
 from utility.notes_handlers import show_note
 from utility.notes_handlers import delete_note
 from utility.notes_handlers import edit_note
-from utility.show_search import show_search
+from utility.notes_search_handlers import search_notes
+from utility.print_notes import print_notes
 from utility.show_help import show_help
 from utility.suggest_command import suggest_command
 
@@ -44,12 +46,14 @@ __all__ = ['parse_input',
            'user_input_handler',
            'show_all_contacts',
            'show_birthdays',
+           'show_search',
            'add_note',
            'show_notes',
            'show_note',
            'delete_note',
            'edit_note',
-           'show_search',
+           'search_notes',
+           'print_notes',
            'show_help',
            'suggest_command',
            ]

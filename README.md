@@ -7,7 +7,7 @@ A command-line assistant written in Python for managing contacts, phone numbers,
 
 ---
 
-## 📦 Features:
+## 📦 Features
 
 1. Save contacts with names, addresses, phone numbers, emails, and birthdays
 2. Display a list of contacts who have a birthday within a specified number of days from today
@@ -42,7 +42,7 @@ pip install .
 
 ---
 
-## ▶️ Run in console:
+## ▶️ Run in console
 
 ```bash
 project-pycliapp

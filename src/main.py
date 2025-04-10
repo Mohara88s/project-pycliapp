@@ -62,6 +62,10 @@ def main():
             "handler": lambda args: print(delete_note(args, notes_book)),
             "description": "Delete note by title [delete-note TITLE]"
         },
+        "search-note": {
+            "handler": lambda args: print_notes(search_notes(args, notes_book)),
+            "description": "Search note"
+        },
         "help": {
             "handler": lambda args: show_help(commands),
             "description": "Show list of available commands in the format [help]"
