@@ -9,8 +9,8 @@ COLORS_SET={
         'MAGENTA'     :Fore.MAGENTA,
         'CYAN'        :Fore.CYAN,
         'LIGHTCYAN_EX':Fore.LIGHTCYAN_EX,
+        'WHITE'       :Fore.WHITE,
     }
-
 
 def colorize_message(message, color):
     color=color.upper()

@@ -1,13 +1,13 @@
 
 # project-pycliapp
 
-# 🤖 Assistant Bot
+# 🤖 Assistant Bot ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 
 A command-line assistant written in Python for managing contacts, phone numbers, addresses, birthdays, and notes.
 
 ---
 
-## 📦 Features:
+## 📦 Features
 
 1. Save contacts with names, addresses, phone numbers, emails, and birthdays
 2. Display a list of contacts who have a birthday within a specified number of days from today
@@ -42,7 +42,7 @@ pip install .
 
 ---
 
-## ▶️ Run in console:
+## ▶️ Run in console
 
 ```bash
 project-pycliapp
@@ -81,19 +81,25 @@ This temporarily adds the path for the current session. To make it permanent, ei
 
 ## 💬 Commands
 
-| Command          | Description                                |
-|------------------|--------------------------------------------|
-| `hello`          | Greet the bot                              |
-| `add`            | Add a contact: `add Name Phone`            |
-| `change`         | Change a phone: `change Name NewPhone`     |
-| `delete`         | Delete a contact by name                   |
-| `phone`          | Show phone number by name                  |
-| `all`            | Show all contacts                          |
-| `add-birthday`   | Add a birthday to a contact                |
-| `show-birthday`  | Show birthday by name                      |
-| `birthdays`      | Show upcoming birthdays                    |
-| `help`           | Show all available commands                |
-| `close` / `exit` | Exit the assistant                         |
+| Command          | Description                                                                                                                                 |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `hello`          | Greet the bot                                                                                                                               |
+| `add-contact`    | Add a new contact or a new phone to the contact in the format `add-contact NAME PHONE`                                                      |
+| `all-contacts`   | Show all contacts in detail in the format `all-contacts`                                                                                    |
+| `delete-contact` | Delete contact in the format `delete-contact NAME`                                                                                          |
+| `search-contact` | Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: `search-contact TYPE VALUE` or `search-contact` for interactive mode  |
+| `phone`          | Show available phone numbers by name in the format `phone NAME`                                                                             |
+| `edit-phone`     | Change contact phone number in the format `edit-phone NAME OLD_PHONE NEW_PHONE`                                                             |
+| `add-birthday`   | Add date of birth to a contact in the format `add-birthday NAME DD.MM.YYYY`                                                                 |
+| `birthday`       | Show contact's date of birth in the format `birthday NAME`                                                                                  |
+| `birthdays`      | Show upcoming birthdays in the format `birthdays LIMIT_OF_DAYS_UNTIL_BIRTHDAY`                                                              |
+| `add-note`       | Add note `add-note TITLE \"CONTENT\" TAG`                                                                                                   |
+| `note`           | Show note by title `note TITLE`                                                                                                             |
+| `all-notes`      | Show all notes `all-notes`                                                                                                                  |
+| `edit-note`      | Edit a note `edit-note OLD_TITLE NEW_TITLE \"NEW_CONTENT\" NEW_TAG`                                                                         |
+| `delete-note`    | Delete note by title `delete-note TITLE`                                                                                                    |
+| `help`           | Show list of available commands in the format                                                                                               |
+| `close` / `exit` | Exit the assistant                                                                                                                          |
 
 ---
 
@@ -107,6 +113,7 @@ project-pycliapp/
 │   └── main.py            # Entry point
 ├── .gitignore             # Gitignore
 ├── addressbook.pkl        # Addressbook storage
+├── notes.pkl              # Notes storage
 ├── LICENSE                # LICENSE
 ├── pyproject.toml         # Start configurator
 └── README.md              # Documentation
@@ -114,12 +121,29 @@ project-pycliapp/
 
 ---
 
-## 👤 Author
+## 👤 Authors
 
-Created with ❤️ by Note Buddy team
+Created with ❤️ by Note Buddy team:
+
+**Team Lead:** 
+
+Vitalii Vasylets
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Mohara88s)
+ 
+**Scrum Master:**
+
+Kostiantyn Talamaniuk
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/antifloodbot)
+
+**Developers:** 
+
+Yevhenii Kanivets
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/EZDIVINER)
+
+Tetiana Makara
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Tetiana-co)
 
 ---
-
 ## 📄 License
 
 This project is licensed under the MIT License.

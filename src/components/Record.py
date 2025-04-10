@@ -8,10 +8,11 @@ from components.Address import Address
 class Record:
     def __init__(self, name):
         self.name = Name(name)
-        self.phones = []
+        self.phones = [] 
         self.birthday = None
         self.email = None
         self.address = None
+
 
     @property
     def get_phones(self):
@@ -19,6 +20,9 @@ class Record:
         for phone in self.phones:
             list_of_phones.append(phone.value)
         return list_of_phones
+    
+    def add_email(self, email):
+        self.email = email
     
     def add_phone(self, phone):
         if self.find_phone(phone):
