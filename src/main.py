@@ -1,5 +1,4 @@
 from utility import *
-import difflib
 
 def main():
     commands = {
@@ -64,7 +63,7 @@ def main():
             "description": "Delete note by title [delete-note TITLE]"
         },
         "help": {
-            "handler": lambda args: show_help(),
+            "handler": lambda args: show_help(commands),
             "description": "Show list of available commands in the format [help]"
         },
         "close": {
@@ -78,15 +77,6 @@ def main():
     }
 
     exit_commands = ["close", "exit"]
-
-    def suggest_command(user_command):
-        matches = difflib.get_close_matches(user_command, commands.keys(), n=5, cutoff=0.2)
-        return matches if matches else None
-
-    def show_help():
-        print("This is available commands:")
-        for name, info in commands.items():
-            print(f"  {name:<15} - {info['description']}")
 
     book = load_addressbook()
     notes_book = load_notes()
@@ -106,7 +96,7 @@ def main():
             if command_data:
                 command_data["handler"](args)
             else:
-                suggestion = suggest_command(command)
+                suggestion = suggest_command(command, commands)
                 if suggestion:
                     print(colorize_message(f"Unknown command: '{command}'. Did you mean '{' or '.join(suggestion)}'?", "YELLOW"))
                 else:

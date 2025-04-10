@@ -22,7 +22,8 @@ from utility.notes_handlers import show_note
 from utility.notes_handlers import delete_note
 from utility.notes_handlers import edit_note
 from utility.show_search import show_search
-
+from utility.show_help import show_help
+from utility.suggest_command import suggest_command
 
 
 __all__ = ['parse_input', 
@@ -48,5 +49,7 @@ __all__ = ['parse_input',
            'show_note',
            'delete_note',
            'edit_note',
-           'show_search'
+           'show_search',
+           'show_help',
+           'suggest_command',
            ]
