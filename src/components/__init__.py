@@ -6,5 +6,7 @@ from components.Name import Name
 from components.Field import Field
 from components.Note import Note
 from components.NotesBook import NotesBook
+from components.Address import Address  # Імпортуємо Address
+from components.Email import Email  # Імпортуємо Email
 
-__all__ = ['AddressBook', 'Record', 'Birthday', 'Phone', 'Name', 'Field', 'Note', 'NotesBook',]
+__all__ = ['AddressBook', 'Record', 'Birthday', 'Phone', 'Name', 'Field', 'Note', 'NotesBook', 'Address', 'Email']
