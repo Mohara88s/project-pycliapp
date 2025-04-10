@@ -7,53 +7,53 @@ def main():
             "handler": lambda args: print("How can I help you?"),
             "description": "Say hello to the bot"
         },
-        "add": {
+        "add-contact": {
             "handler": lambda args: print(add_contact(args, book)),
-            "description": "Add a new contact or a new phone to the contact in the format [add NAME PHONE]"
+            "description": "Add a new contact or a new phone to the contact in the format [add-contact NAME PHONE]"
         },
-        "change-phone": {
-            "handler": lambda args: print(change_contact(args, book)),
-            "description": "Change contact phone number in the format [change NAME OLD_PHONE NEW_PHONE]"
+        "all-contacts": {
+            "handler": lambda args: show_all_contacts(get_all_contacts(book)),
+            "description": "Show all contacts in detail in the format [all-contacts]"
         },
         "delete-contact": {
             "handler": lambda args: print(delete_contact(args, book)),
             "description": "Delete contact in the format [delete-contact NAME]"
         },
+        "search-contact": {
+            "handler": lambda args: print(show_search(args, book)),
+            "description": "Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: [search-contact TYPE VALUE] or [search] for interactive mode"
+        },
         "phone": {
             "handler": lambda args: print(', '.join(show_phone(args, book))),
             "description": "Show available phone numbers by name in the format [phone NAME]"
         },
-        "all": {
-            "handler": lambda args: show_all_contacts(get_all_contacts(book)),
-            "description": "Show all contacts in detail in the format [all]"
+        "edit-phone": {
+            "handler": lambda args: print(change_contact(args, book)),
+            "description": "Change contact phone number in the format [edit-phone NAME OLD_PHONE NEW_PHONE]"
         },
         "add-birthday": {
             "handler": lambda args: print(add_birthday(args, book)),
-            "description": "Add date of birth to a contact in the format [add-birthday DD.MM.YYYY]"
+            "description": "Add date of birth to a contact in the format [add-birthday NAME DD.MM.YYYY]"
         },
-        "show-birthday": {
+        "birthday": {
             "handler": lambda args: print(show_birthday(args, book)),
-            "description": "Show contact's date of birth in the format [show-birthday NAME]"
+            "description": "Show contact's date of birth in the format [birthday NAME]"
         },
         "birthdays": {
             "handler": lambda args: show_birthdays(get_upcoming_birthdays(args, book)),
             "description": "Show upcoming birthdays in the format [birthdays LIMIT_OF_DAYS_UNTIL_BIRTHDAY]"
         },
-        "search": {
-            "handler": lambda args: print(show_search(args, book)),
-            "description": "Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: [search TYPE VALUE] or [search] for interactive mode"
-        },
         "add-note": {
             "handler": lambda args: print(add_note(args, notes_book)),
             "description": "Add Note [add-note TITLE \"CONTENT\" TAG]"
         },
-        "show-note": {
+        "note": {
             "handler": lambda args: print(show_note(args, notes_book)),
-            "description": "Show note by title [show-note TITLE]"
+            "description": "Show note by title [note TITLE]"
         },
-        "show-notes": {
+        "all-notes": {
             "handler": lambda args: print(show_notes(args, notes_book)),
-            "description": "Show all notes [show-notes]"
+            "description": "Show all notes [all-notes]"
         },
         "edit-note": {
             "handler": lambda args: print(edit_note(args, notes_book)),
