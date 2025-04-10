@@ -11,8 +11,8 @@ from utility.birthdays_handlers import get_upcoming_birthdays
 from utility.error_handler import error_handler
 from utility.storage_handlers import save_addressbook
 from utility.storage_handlers import load_addressbook
-from utility.storage_handlers import save_addressbook
-from utility.storage_handlers import load_addressbook
+from utility.storage_handlers import save_notes
+from utility.storage_handlers import load_notes
 from utility.user_input_handler import user_input_handler
 from utility.show_all_contacts import show_all_contacts
 from utility.show_birthdays import show_birthdays
