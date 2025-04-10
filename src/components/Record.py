@@ -55,8 +55,20 @@ class Record:
         self.email = Email(email_str)
 
     def add_address(self, address_str):
-        self.address = Address(address_str)    
+        self.address = Address(address_str)  
 
+     # Edit methods
+    def edit_name(self, new_name):
+        self.name = Name(new_name)
+
+    def edit_birthday(self, new_birthday_str):
+        self.birthday = Birthday(new_birthday_str)
+
+    def edit_email(self, new_email_str):
+        self.email = Email(new_email_str)
+
+    def edit_address(self, new_address_str):
+        self.address = Address(new_address_str)     
 
     def __str__(self):
         return f"Contact name: {self.name.value}, contact birthday:{self.birthday}, phones: {'; '.join(p.value for p in self.phones)}, email: {self.email}, address: {self.address}"
