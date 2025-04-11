@@ -75,7 +75,8 @@ def delete_note(args, notes_book):
     if len(args) < 1:
         return colorize_message("Please provide the note title", "RED")
 
-    title = args[0]
+    title = " ".join(args)  # ← зчитує повністю всю назву з args
+
     if notes_book.delete_note(title):
         return colorize_message(f"Note '{title}' deleted successfully.", "GREEN")
     else:
