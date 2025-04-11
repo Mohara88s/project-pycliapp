@@ -134,8 +134,8 @@ def main():
                 else:
                     print(colorize_message(f"Invalid command: '{command}'. You can try the 'help' command.", "YELLOW"))
         # Catch all exceptions
-        # except Exception as e:
-        #     error_handler(e)
+        except Exception as e:
+            error_handler(e)
         finally:
             save_addressbook(book)
             save_notes(notes_book)
