@@ -1,4 +1,4 @@
-from utility.colorize import colorize_message
+from utilities.colorize import colorize_message
 
 def add_note(args, notes_book):
     if len(args) < 3:
@@ -81,9 +81,9 @@ def delete_note(args, notes_book):
     else:
         return colorize_message(f"Note '{title}' not found.", "YELLOW")
 
-from utility.colorize import colorize_message
+from utilities.colorize import colorize_message
 
-from utility.colorize import colorize_message
+from utilities.colorize import colorize_message
 
 def edit_note(args, notes_book):
     if len(args) < 4:

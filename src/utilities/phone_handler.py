@@ -1,4 +1,4 @@
-from components import AddressBook
+from classes import AddressBook
 
 def show_phone(args, book: AddressBook):
     if len(args)<1:

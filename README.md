@@ -110,8 +110,8 @@ This temporarily adds the path for the current session. To make it permanent, ei
 ```
 project-pycliapp/
 ├── src/
-│   |──components/         # Classes: AddressBook, Record, Field, etc.
-│   |──utility/            # Functions, input/output handlers
+│   |──classes/            # Classes: AddressBook, Record, Field, etc.
+│   |──utilities/          # Functions, input/output handlers
 │   └── main.py            # Entry point
 ├── .gitignore             # Gitignore
 ├── addressbook.pkl        # Addressbook storage

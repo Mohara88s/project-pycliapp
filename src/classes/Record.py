@@ -1,9 +1,9 @@
 from datetime import datetime, date
-from components.Name import Name
-from components.Phone import Phone
-from components.Birthday import Birthday
-from components.Email import Email
-from components.Address import Address
+from classes.Name import Name
+from classes.Phone import Phone
+from classes.Birthday import Birthday
+from classes.Email import Email
+from classes.Address import Address
  
 class Record:
     def __init__(self, name):

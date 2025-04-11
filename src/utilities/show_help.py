@@ -1,4 +1,4 @@
-from utility.colorize import colorize_message
+from utilities.colorize import colorize_message
 
 def show_help(commands):
         print("This is available commands:")

@@ -1,8 +1,8 @@
-from utility.show_search import show_search
-from components.Phone import Phone
-from components.Email import Email
-from components.Birthday import Birthday
-from components.Name import Name
+from utilities.show_search import show_search
+from classes.Phone import Phone
+from classes.Email import Email
+from classes.Birthday import Birthday
+from classes.Name import Name
 """def handle_search_contact(args, book):
     if not args:
         

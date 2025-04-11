@@ -1,6 +1,6 @@
 from collections import namedtuple
-from components import AddressBook, Record
-from utility.colorize import colorize_message
+from classes import AddressBook, Record
+from utilities.colorize import colorize_message
 
 def add_contact(args, book: AddressBook):
     if len(args)<2:

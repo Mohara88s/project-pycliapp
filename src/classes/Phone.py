@@ -1,4 +1,4 @@
-from components.Field import Field
+from classes.Field import Field
 
 class Phone(Field):    
     def __init__(self, phone):

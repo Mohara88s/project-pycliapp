@@ -1,4 +1,4 @@
-from utility.colorize import colorize_message
+from utilities.colorize import colorize_message
 
 def notes_print(notes):
     if len(notes)!=0:

@@ -1,4 +1,4 @@
-from components.Field import Field
+from classes.Field import Field
 import re
 
 class Email(Field):

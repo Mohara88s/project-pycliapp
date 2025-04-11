@@ -1,4 +1,4 @@
-from components.Note import Note
+from classes.Note import Note
 
 class NotesBook:
     def __init__(self):

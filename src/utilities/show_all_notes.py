@@ -1,4 +1,4 @@
-from utility.colorize import colorize_message
+from utilities.colorize import colorize_message
 
 def show_all_notes(notes_book):
     notes = notes_book.all_notes()

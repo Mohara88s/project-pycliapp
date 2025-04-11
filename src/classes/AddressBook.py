@@ -1,8 +1,8 @@
 from collections import UserDict
 from datetime import datetime
-from components.Record import Record
-from components.Name import Name
-from components.Phone import Phone
+from classes.Record import Record
+from classes.Name import Name
+from classes.Phone import Phone
 
 class AddressBook(UserDict):
 

@@ -1,5 +1,5 @@
 from datetime import datetime
-from components.Field import Field
+from classes.Field import Field
 import re
 
 class Birthday(Field):
