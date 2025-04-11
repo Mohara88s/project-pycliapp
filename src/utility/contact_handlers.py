@@ -44,6 +44,54 @@ def get_all_contacts(book: AddressBook):
         list_of_contacts.append(Contact_tuple(name, record.get_phones, record.get_birthday))
     return sorted(list_of_contacts)
 
+def add_email(args, book):
+    name, email = args
+    record = book.get(name)
+    if not record:
+        return f"No contact found with name: {name}"
+    record.add_email(email)
+    return f"Email '{email}' added to contact '{name}'"
+
+def add_address(args, book):
+    name, address = args
+    record = book.get(name)
+    if not record:
+        return f"No contact found with name: {name}"
+    record.add_address(address)
+    return f"Address '{address}' added to contact '{name}'"
+
+def edit_email(args, book):
+    name, new_email = args
+    record = book.get(name)
+    if not record:
+        return f"No contact found with name: {name}"
+    record.edit_email(new_email)
+    return f"Email for '{name}' updated to '{new_email}'"
+
+def edit_address(args, book):
+    name, new_address = args
+    record = book.get(name)
+    if not record:
+        return f"No contact found with name: {name}"
+    record.edit_address(new_address)
+    return f"Address for '{name}' updated to '{new_address}'"
+
+def edit_name(args, book):
+    old_name, new_name = args
+    record = book.pop(old_name, None)
+    if not record:
+        return f"No contact found with name: {old_name}"
+    record.name.value = new_name
+    book[new_name] = record
+    return f"Name changed from '{old_name}' to '{new_name}'"
+
+def edit_birthday(args, book):
+    name, new_birthday = args
+    record = book.get(name)
+    if not record:
+        return f"No contact found with name: {name}"
+    record.edit_birthday(new_birthday)
+    return f"Birthday for '{name}' updated to '{new_birthday}'"
 
 if __name__ == "__main__":
     pass
