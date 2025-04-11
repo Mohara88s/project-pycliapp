@@ -120,7 +120,7 @@ def main():
 
     while True:
         try:
-            command, *args = parse_input(user_input_handler())
+            command, *args = parse_input(user_input_handler('Enter a command: '))
             command_data = commands.get(command)
 
             if command in exit_commands:
