@@ -42,10 +42,6 @@ def main():
             "handler": lambda args: show_birthdays(get_upcoming_birthdays(args, book)),
             "description": "Show upcoming birthdays in the format [birthdays LIMIT_OF_DAYS_UNTIL_BIRTHDAY]"
         },
-        "add-note": {
-            "handler": lambda args: print(add_note(args, notes_book)),
-                "description": "Add a note [add-note \"TITLE\" \"CONTENT\" TAG]"
-        },
         "add-email": {
             "handler": lambda args: print(add_email(args, book)),
             "description": "Add email to contact in the format [add-email NAME EMAIL]"
@@ -70,7 +66,10 @@ def main():
             "handler": lambda args: print(edit_birthday(args, book)),
             "description": "Edit birthday of a contact in the format [edit-birthday NAME NEW_BIRTHDAY]"
         },
-
+        "add-note": {
+            "handler": lambda args: print(add_note(args, notes_book)),
+                "description": "Add a note [add-note \"TITLE\" \"CONTENT\" TAG]"
+        },
         "note": {
             "handler": lambda args: print(show_note(args, notes_book)),
             "description": "Show note by title in the format [note TITLE]"
@@ -135,8 +134,8 @@ def main():
                 else:
                     print(colorize_message(f"Invalid command: '{command}'. You can try the 'help' command.", "YELLOW"))
         # Catch all exceptions
-        except Exception as e:
-            error_handler(e)
+        # except Exception as e:
+        #     error_handler(e)
         finally:
             save_addressbook(book)
             save_notes(notes_book)

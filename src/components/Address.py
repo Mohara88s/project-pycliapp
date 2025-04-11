@@ -10,5 +10,8 @@ class Address(Field):
             raise Exception("Address cannot be empty")
         return address
 
+    # def __str__(self):
+    #     return f'{self.value}'
+
 if __name__ == "__main__":
     pass

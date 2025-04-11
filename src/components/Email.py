@@ -12,5 +12,8 @@ class Email(Field):
             raise Exception("Invalid email format")
         return email
 
+    # def __str__(self):
+    #     return f'{self.value}'
+    
 if __name__ == "__main__":
     pass

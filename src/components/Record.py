@@ -13,6 +13,10 @@ class Record:
         self.email = None
         self.address = None
 
+    def add_phone(self, phone):
+        if self.find_phone(phone):
+            raise Exception(f"The phone number {phone} has already been added to contact {self.name}")
+        self.phones.append(Phone(phone))
 
     @property
     def get_phones(self):
@@ -21,14 +25,6 @@ class Record:
             list_of_phones.append(phone.value)
         return list_of_phones
     
-    def add_email(self, email):
-        self.email = email
-    
-    def add_phone(self, phone):
-        if self.find_phone(phone):
-            raise Exception(f"The phone number {phone} has already been added to contact {self.name}")
-        self.phones.append(Phone(phone))
-
     def remove_phone(self, phone):
         if not self.find_phone(phone):
             raise Exception(f"The phone number:{phone} is not found")
@@ -43,19 +39,27 @@ class Record:
         result = [ph for ph in self.phones if ph.value == phone]
         return result[0] if len(result) > 0 else None
     
+    def add_birthday(self, birthday_str):
+        self.birthday=Birthday(birthday_str)
+
     @property
     def get_birthday(self):
         birthday_date = datetime.strptime(str(self.birthday), "%Y-%m-%d").strftime("%d.%m.%Y") if self.birthday else None
         return birthday_date
     
-    def add_birthday(self, birthday_str):
-        self.birthday=Birthday(birthday_str)
-
     def add_email(self, email_str):
         self.email = Email(email_str)
+    
+    @property
+    def get_email(self):
+        return self.email
 
     def add_address(self, address_str):
         self.address = Address(address_str)  
+        
+    @property
+    def get_address(self):
+        return self.address
 
      # Edit methods
     def edit_name(self, new_name):
