@@ -41,7 +41,7 @@ def get_all_contacts(book: AddressBook):
     list_of_contacts = []
     Contact_tuple = namedtuple('Contact', ['name', 'phones','birthday'])
     for name, record in book.get_all_records.items():
-        list_of_contacts.append(Contact_tuple(name, record.get_phones, record.get_birthday))
+        list_of_contacts.append(Contact_tuple(name, record.get_phones, record.get_birthday)) #record.get_email, record.get_address
     return sorted(list_of_contacts)
 
 def add_email(args, book):
@@ -53,12 +53,21 @@ def add_email(args, book):
     return f"Email '{email}' added to contact '{name}'"
 
 def add_address(args, book):
-    name, address = args
-    record = book.get(name)
-    if not record:
-        return f"No contact found with name: {name}"
-    record.add_address(address)
-    return f"Address '{address}' added to contact '{name}'"
+
+    if len(args) < 2:
+        return("Invalid number of arguments. Usage: [name] [address]")
+    name = args[0]
+    address = " ".join(args[1:])
+    record = book.find(name)
+    if not isinstance(record, Record):
+        return("Contact not found")
+    try:
+        record.add_address(address)
+    except ValueError as e:
+        return str(e)
+    message = "Address added."
+    return message
+    
 
 def edit_email(args, book):
     name, new_email = args
@@ -92,6 +101,31 @@ def edit_birthday(args, book):
         return f"No contact found with name: {name}"
     record.edit_birthday(new_birthday)
     return f"Birthday for '{name}' updated to '{new_birthday}'"
+
+def delete_email(args, book: AddressBook):
+    if len(args)<1:
+        raise ValueError("Please give me the contact's email")
+    email, *_ = args
+    book.delete(email)
+    message = "email deleted"
+    return colorize_message(message, "GREEN")
+
+def delete_address(args, book: AddressBook):
+    if len(args) !=1:
+        raise ValueError("Please give me the contact's name")
+    
+    name = args[0]
+    record = book.find(name)
+    if not isinstance(record, Record):
+        return(f"No contact with the name '{name}' exists")
+    if record.address:
+        record.delete_address()
+        message = "Address deleted"
+        return colorize_message(message, "GREEN")
+    else:
+        return("Address not found for this contact")
+        
+    
 
 if __name__ == "__main__":
     pass

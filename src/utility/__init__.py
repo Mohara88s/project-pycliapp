@@ -31,7 +31,7 @@ from utility.show_help import show_help
 from utility.suggest_command import suggest_command
 from utility.handle_search_contact import handle_search_contact
 from utility.contact_handlers import add_email, add_address
-from utility.contact_handlers import edit_email, edit_address, edit_name, edit_birthday
+from utility.contact_handlers import edit_email, edit_address, edit_name, edit_birthday, delete_address
 
 
 
@@ -74,4 +74,5 @@ __all__ = ['parse_input',
            'edit_name',
            'edit_address',
            'edit_birthday',
+           'delete_address',
            ]

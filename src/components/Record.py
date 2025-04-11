@@ -21,9 +21,6 @@ class Record:
             list_of_phones.append(phone.value)
         return list_of_phones
     
-    def add_email(self, email):
-        self.email = email
-    
     def add_phone(self, phone):
         if self.find_phone(phone):
             raise Exception(f"The phone number {phone} has already been added to contact {self.name}")
@@ -70,6 +67,9 @@ class Record:
     def edit_address(self, new_address_str):
         self.address = Address(new_address_str)     
 
+    def delete_address(self):
+        self.address = None
+        
     def __str__(self):
         return f"Contact name: {self.name.value}, contact birthday:{self.birthday}, phones: {'; '.join(p.value for p in self.phones)}, email: {self.email}, address: {self.address}"
     

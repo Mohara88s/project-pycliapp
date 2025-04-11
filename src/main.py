@@ -68,7 +68,11 @@ def main():
         },
          "edit-birthday": {
             "handler": lambda args: print(edit_birthday(args, book)),
-            "description": "Edit birthday of a contact in the format [edit-birthday NAME NEW_BIRTHDAY]"
+            "description": "Edit birthday of a contact in the format [edit-birthday NAME NEW_BIRTHDAY]" 
+        },
+        "delete-address": {
+            "handler": lambda args: print(delete_address(args, book)),
+            "description": "Delete address in the format [delete-address NAME]" #delete_address
         },
 
         "note": {
