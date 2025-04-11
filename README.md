@@ -125,14 +125,14 @@ project-pycliapp/
 
 ## 👤 Authors
 
-Created with ❤️ by Note Buddy team:
+Created with ❤️ by ThePythonWay team:
 
 **Team Lead:** 
 
 Vitalii Vasylets
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Mohara88s)
  
-**Scrum Master:**
+**Scrum Master:**м
 
 Kostiantyn Talamaniuk
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/antifloodbot)
