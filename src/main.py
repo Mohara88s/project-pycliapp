@@ -18,6 +18,10 @@ def main():
             "handler": lambda args: print(delete_contact(args, book)),
             "description": "Delete contact in the format [delete-contact NAME]"
         },
+        "edit-name": {
+            "handler": lambda args: print(edit_name(args, book)),
+            "description": "Edit name of a contact in the format [edit-name OLD_NAME NEW_NAME]"
+        },
         "search-contact": {
             "handler": lambda args: handle_search_contact(args, book),
             "description": "Search contacts by: name, phone, birthday, email. Format:[search-contact] for interactive mode"
@@ -34,6 +38,10 @@ def main():
             "handler": lambda args: print(add_birthday(args, book)),
             "description": "Add date of birth to a contact in the format [add-birthday NAME DD.MM.YYYY]"
         },
+         "edit-birthday": {
+            "handler": lambda args: print(edit_birthday(args, book)),
+            "description": "Edit birthday of a contact in the format [edit-birthday NAME NEW_BIRTHDAY]"
+        },
         "birthday": {
             "handler": lambda args: print(show_birthday(args, book)),
             "description": "Show contact's date of birth in the format [birthday NAME]"
@@ -46,25 +54,17 @@ def main():
             "handler": lambda args: print(add_email(args, book)),
             "description": "Add email to contact in the format [add-email NAME EMAIL]"
         },
-        "add-address": {
-            "handler": lambda args: print(add_address(args, book)),
-            "description": "Add address to contact in the format [add-address NAME ADDRESS]"
-        },
         "edit-email": {
             "handler": lambda args: print(edit_email(args, book)),
             "description": "Edit email of a contact in the format [edit-email NAME NEW_EMAIL]"
         },
+        "add-address": {
+            "handler": lambda args: print(add_address(args, book)),
+            "description": "Add address to contact in the format [add-address NAME ADDRESS]"
+        },
         "edit-address": {
             "handler": lambda args: print(edit_address(args, book)),
             "description": "Edit address of a contact in the format [edit-address NAME NEW_ADDRESS]"
-        },
-        "edit-name": {
-            "handler": lambda args: print(edit_name(args, book)),
-            "description": "Edit name of a contact in the format [edit-name OLD_NAME NEW_NAME]"
-        },
-         "edit-birthday": {
-            "handler": lambda args: print(edit_birthday(args, book)),
-            "description": "Edit birthday of a contact in the format [edit-birthday NAME NEW_BIRTHDAY]"
         },
         "add-note": {
             "handler": lambda args: print(add_note(args, notes_book)),
