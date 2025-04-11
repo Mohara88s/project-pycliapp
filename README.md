@@ -45,7 +45,7 @@ pip install .
 ## ▶️ Run in console
 
 ```bash
-project-pycliapp
+abot
 ```
 
 ---
