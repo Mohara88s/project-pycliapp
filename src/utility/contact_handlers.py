@@ -52,8 +52,9 @@ def add_email(args, book):
     if not record:
         return f"No contact found with name: {name}"
     record.add_email(email)
-    return f"Email '{email}' added to contact '{name}'"
-
+    message = f"Email '{email}' added to contact '{name}'"
+    return colorize_message(message, "GREEN")
+    
 def add_address(args, book):
     if len(args)<2:
         raise ValueError("Please give me the contact's name and address")
@@ -62,7 +63,8 @@ def add_address(args, book):
     if not record:
         return f"No contact found with name: {name}"
     record.add_address(address)
-    return f"Address '{address}' added to contact '{name}'"
+    message = f"Address '{address}' added to contact '{name}'"
+    return colorize_message(message, "GREEN")
 
 def edit_email(args, book):
     if len(args)<2:
@@ -72,7 +74,8 @@ def edit_email(args, book):
     if not record:
         return f"No contact found with name: {name}"
     record.edit_email(new_email)
-    return f"Email for '{name}' updated to '{new_email}'"
+    message = f"Email for '{name}' updated to '{new_email}'"
+    return colorize_message(message, "GREEN")
 
 def edit_address(args, book):
     if len(args)<2:
@@ -82,7 +85,8 @@ def edit_address(args, book):
     if not record:
         return f"No contact found with name: {name}"
     record.edit_address(new_address)
-    return f"Address for '{name}' updated to '{new_address}'"
+    message = f"Address for '{name}' updated to '{new_address}'"
+    return colorize_message(message, "GREEN")
 
 def edit_name(args, book):
     if len(args)<2:
@@ -93,7 +97,9 @@ def edit_name(args, book):
         return f"No contact found with name: {old_name}"
     record.name.value = new_name
     book[new_name] = record
-    return f"Name changed from '{old_name}' to '{new_name}'"
+    message = f"Name changed from '{old_name}' to '{new_name}'"
+    return colorize_message(message, "GREEN")
+
 
 def add_birthday(args, book: AddressBook):
     if len(args)<2:
@@ -141,7 +147,8 @@ def edit_birthday(args, book):
     if not record:
         return f"No contact found with name: {name}"
     record.edit_birthday(new_birthday)
-    return f"Birthday for '{name}' updated to '{new_birthday}'"
+    message = f"Birthday for '{name}' updated to '{new_birthday}'"
+    return colorize_message(message, "GREEN")
 
 if __name__ == "__main__":
     pass

@@ -10,10 +10,7 @@ class Email(Field):
         pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
         if not re.match(pattern, email):
             raise Exception("Invalid email format")
-        return email
-
-    # def __str__(self):
-    #     return f'{self.value}'
-    
+        return email.lower()
+   
 if __name__ == "__main__":
     pass
