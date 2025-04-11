@@ -81,11 +81,12 @@ def edit_email(args, book):
 def edit_address(args, book):
     if len(args)<2:
         raise ValueError("Please give me the contact's name and address")
-    name, new_address = args
+    name, *new_address = args
     record = book.find(name)
+    new_address_str = " ".join(new_address)
     if not record:
         return f"No contact found with name: {name}"
-    record.edit_address(new_address)
+    record.edit_address(new_address_str)
     message = f"Address for '{name}' updated to '{new_address}'"
     return colorize_message(message, "GREEN")
 
