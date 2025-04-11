@@ -66,6 +66,10 @@ def main():
             "handler": lambda args: print(edit_address(args, book)),
             "description": "Edit address of a contact in the format [edit-address NAME NEW_ADDRESS]"
         },
+        "delete-address": {
+            "handler": lambda args: print(delete_address(args, book)),
+            "description": "Delete address in the format [delete-address NAME]" #delete_address
+        },
         "add-note": {
             "handler": lambda args: print(add_note(args, notes_book)),
                 "description": "Add a note [add-note \"TITLE\" \"CONTENT\" TAG]"

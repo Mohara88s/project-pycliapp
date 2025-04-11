@@ -72,7 +72,10 @@ class Record:
         self.email = Email(new_email_str)
 
     def edit_address(self, new_address_str):
-        self.address = Address(new_address_str)     
+        self.address = Address(new_address_str)    
+
+    def delete_address(self):
+        self.address = None 
 
     def __str__(self):
         return f"Contact name: {self.name.value}, contact birthday:{self.birthday}, phones: {'; '.join(p.value for p in self.phones)}, email: {self.email}, address: {self.address}"

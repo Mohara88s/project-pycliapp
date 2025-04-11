@@ -58,7 +58,8 @@ def add_email(args, book):
 def add_address(args, book):
     if len(args)<2:
         raise ValueError("Please give me the contact's name and address")
-    name, address = args
+    name, address, *_ = args
+    address = " ".join(args[1:])
     record = book.find(name)
     if not record:
         return f"No contact found with name: {name}"
@@ -88,6 +89,29 @@ def edit_address(args, book):
     message = f"Address for '{name}' updated to '{new_address}'"
     return colorize_message(message, "GREEN")
 
+def delete_email(args, book: AddressBook):
+    if len(args)<1:
+        raise ValueError("Please give me the contact's email")
+    email, *_ = args
+    book.delete(email)
+    message = "email deleted"
+    return colorize_message(message, "GREEN")
+
+def delete_address(args, book: AddressBook):
+    if len(args) !=1:
+        raise ValueError("Please give me the contact's name")
+
+    name = args[0]
+    record = book.find(name)
+    if not isinstance(record, Record):
+        return(f"No contact with the name '{name}' exists")
+    if record.address:
+        record.delete_address()
+        message = "Address deleted"
+        return colorize_message(message, "GREEN")
+    else:
+        return("Address not found for this contact")
+    
 def edit_name(args, book):
     if len(args)<2:
         raise ValueError("Please give me the contact's old name and new name")
@@ -149,6 +173,8 @@ def edit_birthday(args, book):
     record.edit_birthday(new_birthday)
     message = f"Birthday for '{name}' updated to '{new_birthday}'"
     return colorize_message(message, "GREEN")
+
+
 
 if __name__ == "__main__":
     pass
