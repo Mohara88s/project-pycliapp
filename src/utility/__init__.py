@@ -64,10 +64,10 @@ __all__ = ['parse_input',
            'notes_print',
            'tags_with_notes_print',
            'search_and_group_notes_by_tag',
-           'show_all_notes'
+           'show_all_notes',
            'show_help',
            'suggest_command',
-           'handle_search_contact'
+           'handle_search_contact',
            'add_email', 
            'add_address',
            'edit_email',
