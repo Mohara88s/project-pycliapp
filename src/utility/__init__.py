@@ -28,6 +28,7 @@ from utility.notes_print_handlers import notes_print
 from utility.notes_print_handlers import tags_with_notes_print
 from utility.show_help import show_help
 from utility.suggest_command import suggest_command
+from utility.handle_search_contact import handle_search_contact
 
 
 
@@ -61,4 +62,5 @@ __all__ = ['parse_input',
            'search_and_group_notes_by_tag',
            'show_help',
            'suggest_command',
+           'handle_search_contact'
            ]
