@@ -84,23 +84,30 @@ This temporarily adds the path for the current session. To make it permanent, ei
 | Command                 | Description                                                                                                                                 |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | `hello`                 | Greet the bot                                                                                                                               |
-| `add-contact`           | Add a new contact or a new phone to the contact in the format `add-contact NAME PHONE`                                                      |
+| `add-contact`           | Add a new contact or a new phone to the contact in the format `add-contact [NAME] [PHONE]`                                                  |
 | `all-contacts`          | Show all contacts in detail in the format `all-contacts`                                                                                    |
-| `delete-contact`        | Delete contact in the format `delete-contact NAME`                                                                                          |
-| `search-contact`        | Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: `search-contact TYPE VALUE` or `search-contact` for interactive mode  |
-| `phone`                 | Show available phone numbers by name in the format `phone NAME`                                                                             |
-| `edit-phone`            | Change contact phone number in the format `edit-phone NAME OLD_PHONE NEW_PHONE`                                                             |
-| `add-birthday`          | Add date of birth to a contact in the format `add-birthday NAME DD.MM.YYYY`                                                                 |
-| `birthday`              | Show contact's date of birth in the format `birthday NAME`                                                                                  |
-| `birthdays`             | Show upcoming birthdays in the format `birthdays LIMIT_OF_DAYS_UNTIL_BIRTHDAY`                                                              |
-| `add-note`              | Add note `add-note TITLE \"CONTENT\" TAG`                                                                                                   |
-| `note`                  | Show note by title `note TITLE`                                                                                                             |
-| `all-notes`             | Show all notes `all-notes`                                                                                                                  |
-| `edit-note`             | Edit a note `edit-note OLD_TITLE NEW_TITLE \"NEW_CONTENT\" NEW_TAG`                                                                         |
-| `delete-note`           | Delete note by title `delete-note TITLE`                                                                                                    |
-| `search-note`           | Search notes by title, tags or query in the format [search-note title: TITLE] or [search-note tags: TAGS] or [search-note QUERY]            |
-| `search-notes-by-tag`   | Search sorted tags which are similar to query and connectet to them notes in the format [search-notes-by-tag QUERY]                         |
-| `help`                  | Show list of available commands in the format                                                                                               |
+| `delete-contact`        | Delete contact in the format `delete-contact [NAME]`                                                                                        |
+| `edit-name`             | Edit name of a contact in the format `edit-name [OLD_NAME] [NEW_NAME]`                                                                      |
+| `search-contact`        | Search contacts by: name, phone, birthday, email in the format `search-contact` for interactive mode                                        |
+| `phone`                 | Show available phone numbers by name in the format `phone [NAME]`                                                                           |
+| `edit-phone`            | Change contact phone number in the format `edit-phone NAME [OLD_PHONE] [NEW_PHONE]`                                                         |
+| `add-birthday`          | Add date of birth to a contact in the format `add-birthday [NAME] [DD.MM.YYYY]`                                                             |
+| `edit-birthday`         | Edit birthday of a contact in the format `edit-birthday [NAME] [DD.MM.YYYY]`                                                                |
+| `birthday`              | Show contact's date of birth in the format `birthday [NAME]`                                                                                |
+| `birthdays`             | Show upcoming birthdays in the format `birthdays [LIMIT_OF_DAYS_UNTIL_BIRTHDAY]`                                                            |
+| `add-email`             | Add email to contact in the format `add-email [NAME] [EMAIL]`                                                                               |
+| `edit-email`            | Edit email of a contact in the format `edit-email [NAME] [NEW_EMAIL]`                                                                       |
+| `add-address`           | Add address to contact in the format `add-address [NAME] [ADDRESS]`                                                                         |
+| `edit-address`          | Edit address of a contact in the format `edit-address [NAME] [NEW_ADDRESS]`                                                                 |
+| `delete-address`        | Delete address in the format `delete-address [NAME]`                                                                                        |
+| `add-note`              | Add note in the format `add-note [TITLE] "[CONTENT]" [TAG1 TAG2 ...]`                                                                       |
+| `note`                  | Show note by title in the forma `note [TITLE]`                                                                                              |
+| `all-notes`             | Show all notes  in the format `all-notes`                                                                                                   |
+| `edit-note`             | Edit note in the format `edit-note "[OLD_TITLE]" "[NEW_TITLE]" "[NEW_CONTENT]" [TAG1 TAG2 ...]`                                             |
+| `delete-note`           | Delete note by title in the forma `delete-note [TITLE]`                                                                                     |
+| `search-note`           | Search notes by title, tags or query in the format `search-note title: [TITLE]` or `search-note tags: [TAGS]` or `search-note [QUERY]`      |
+| `search-notes-by-tag`   | Search sorted tags which are similar to query and connectet to them notes in the format `search-notes-by-tag [QUERY]`                       |
+| `help`                  | Show list of available commands                                                                                                             |
 | `close` / `exit`        | Exit the assistant                                                                                                                          |
 
 ---
@@ -111,12 +118,12 @@ This temporarily adds the path for the current session. To make it permanent, ei
 project-pycliapp/
 ├── src/
 │   |──classes/            # Classes: AddressBook, Record, Field, etc.
-│   |──utilities/          # Functions, input/output handlers
+│   |──utilities/          # Functions, input/output handlers, etc.
 │   └── main.py            # Entry point
 ├── .gitignore             # Gitignore
 ├── addressbook.pkl        # Addressbook storage
 ├── notes.pkl              # Notes storage
-├── LICENSE                # LICENSE
+├── LICENSE                # Licence
 ├── pyproject.toml         # Start configurator
 └── README.md              # Documentation
 ```
@@ -125,14 +132,14 @@ project-pycliapp/
 
 ## 👤 Authors
 
-Created with ❤️ by ThePythonWay team:
+Created with ❤️ by **ThePythonWay** team:
 
 **Team Lead:** 
 
 Vitalii Vasylets
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Mohara88s)
  
-**Scrum Master:**м
+**Scrum Master:**
 
 Kostiantyn Talamaniuk
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/antifloodbot)

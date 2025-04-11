@@ -8,7 +8,7 @@ def main():
         },
         "add-contact": {
             "handler": lambda args: print(add_contact(args, book)),
-            "description": "Add a new contact or a new phone to the contact in the format [add-contact NAME PHONE]"
+            "description": "Add a new contact or a new phone to the contact in the format [add-contact [NAME] [PHONE]]"
         },
         "all-contacts": {
             "handler": lambda args: show_all_contacts(get_all_contacts(book)),
@@ -16,67 +16,67 @@ def main():
         },
         "delete-contact": {
             "handler": lambda args: print(delete_contact(args, book)),
-            "description": "Delete contact in the format [delete-contact NAME]"
+            "description": "Delete contact in the format [delete-contact [NAME]]"
         },
         "edit-name": {
             "handler": lambda args: print(edit_name(args, book)),
-            "description": "Edit name of a contact in the format [edit-name OLD_NAME NEW_NAME]"
+            "description": "Edit name of a contact in the format [edit-name [OLD_NAME] [NEW_NAME]]"
         },
         "search-contact": {
             "handler": lambda args: handle_search_contact(args, book),
-            "description": "Search contacts by: name, phone, birthday, email. Format:[search-contact] for interactive mode"
+            "description": "Search contacts by: name, phone, birthday, emailin the format [search-contact] for interactive mode"
         },
         "phone": {
             "handler": lambda args: print(', '.join(show_phone(args, book))),
-            "description": "Show available phone numbers by name in the format [phone NAME]"
+            "description": "Show available phone numbers by name in the format [phone [NAME]]"
         },
         "edit-phone": {
             "handler": lambda args: print(change_contact(args, book)),
-            "description": "Change contact phone number in the format [edit-phone NAME OLD_PHONE NEW_PHONE]"
+            "description": "Change contact phone number in the format [edit-phone [NAME] [OLD_PHONE] [NEW_PHONE]]"
         },
         "add-birthday": {
             "handler": lambda args: print(add_birthday(args, book)),
-            "description": "Add date of birth to a contact in the format [add-birthday NAME DD.MM.YYYY]"
+            "description": "Add date of birth to a contact in the format [add-birthday [NAME] [DD.MM.YYYY]]"
         },
          "edit-birthday": {
             "handler": lambda args: print(edit_birthday(args, book)),
-            "description": "Edit birthday of a contact in the format [edit-birthday NAME NEW_BIRTHDAY]"
+            "description": "Edit birthday of a contact in the format [edit-birthday [NAME] [DD.MM.YYYY]]"
         },
         "birthday": {
             "handler": lambda args: print(show_birthday(args, book)),
-            "description": "Show contact's date of birth in the format [birthday NAME]"
+            "description": "Show contact's date of birth in the format [birthday [NAME]]"
         },
         "birthdays": {
             "handler": lambda args: show_birthdays(get_upcoming_birthdays(args, book)),
-            "description": "Show upcoming birthdays in the format [birthdays LIMIT_OF_DAYS_UNTIL_BIRTHDAY]"
+            "description": "Show upcoming birthdays in the format [birthdays [LIMIT_OF_DAYS_UNTIL_BIRTHDAY]]"
         },
         "add-email": {
             "handler": lambda args: print(add_email(args, book)),
-            "description": "Add email to contact in the format [add-email NAME EMAIL]"
+            "description": "Add email to contact in the format [add-email [NAME] [EMAIL]]"
         },
         "edit-email": {
             "handler": lambda args: print(edit_email(args, book)),
-            "description": "Edit email of a contact in the format [edit-email NAME NEW_EMAIL]"
+            "description": "Edit email of a contact in the format [edit-email [NAME] [NEW_EMAIL]]"
         },
         "add-address": {
             "handler": lambda args: print(add_address(args, book)),
-            "description": "Add address to contact in the format [add-address NAME ADDRESS]"
+            "description": "Add address to contact in the format [add-address [NAME] [ADDRESS]]"
         },
         "edit-address": {
             "handler": lambda args: print(edit_address(args, book)),
-            "description": "Edit address of a contact in the format [edit-address NAME NEW_ADDRESS]"
+            "description": "Edit address of a contact in the format [edit-address [NAME] [NEW_ADDRESS]]"
         },
         "delete-address": {
             "handler": lambda args: print(delete_address(args, book)),
-            "description": "Delete address in the format [delete-address NAME]" #delete_address
+            "description": "Delete address in the format [delete-address [NAME]]"
         },
         "add-note": {
             "handler": lambda args: print(add_note(args, notes_book)),
-                "description": "Add a note [add-note \"TITLE\" \"CONTENT\" TAG]"
+                "description": "Add a note [add-note \"[TITLE]\" \"[CONTENT]\" [TAG1 TAG2 ...]]"
         },
         "note": {
             "handler": lambda args: print(show_note(args, notes_book)),
-            "description": "Show note by title in the format [note TITLE]"
+            "description": "Show note by title in the format [note [TITLE]]"
         },
         "all-notes": {
             "handler": lambda args: print(show_all_notes(notes_book)),
@@ -84,11 +84,11 @@ def main():
         },
         "edit-note": {
             "handler": lambda args: print(edit_note(args, notes_book)),
-            "description": "Edit note in the format [edit-note \"OLD_TITLE\" \"NEW_TITLE\" \"NEW_CONTENT\" TAG1 TAG2 ...]"
+            "description": "Edit note in the format [edit-note \"[OLD_TITLE]\" \"[NEW_TITLE]\" \"[NEW_CONTENT]\" [TAG1 TAG2 ...]]"
         },
         "delete-note": {
             "handler": lambda args: print(delete_note(args, notes_book)),
-            "description": "Delete note by title in the format [delete-note TITLE]"
+            "description": "Delete note by title in the format [delete-note [TITLE]]"
         },
         "search-note": {
             "handler": lambda args: notes_print(search_notes(args, notes_book)),
