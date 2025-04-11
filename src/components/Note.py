@@ -5,4 +5,10 @@ class Note:
         self.tags = tags or []
 
     def __str__(self):
-        return f"Title: {self.title}\nTags: {', '.join(self.tags)}\nContent: {self.content}"
+        from utility import colorize_message
+        return (
+                f"{colorize_message(f'Title: {self.title}', 'RED')}\n"
+                f"{colorize_message(f'Tags: {" ".join(self.tags)}', 'GREEN')}\n"
+                f"{colorize_message(f'Content: {self.content}', 'CYAN')}\n"
+                + "-" * 30
+        )
