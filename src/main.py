@@ -19,8 +19,8 @@ def main():
             "description": "Delete contact in the format [delete-contact NAME]"
         },
         "search-contact": {
-            "handler": lambda args: print(show_search(args, book)),
-            "description": "Search contacts by: 1) name, 2) phone, 3) birthday, 4) email. Format: [search-contact TYPE VALUE] or [search-contact] for interactive mode"
+            "handler": lambda args: handle_search_contact(args, book),
+            "description": "Search contacts by: name, phone, birthday, email. Format:[search-contact] for interactive mode"
         },
         "phone": {
             "handler": lambda args: print(', '.join(show_phone(args, book))),

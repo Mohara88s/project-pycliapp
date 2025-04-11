@@ -42,7 +42,7 @@ class AddressBook(UserDict):
         return sorted(records_to_congr, key=lambda x: datetime.strptime(x["congratulation_date"], "%d.%m.%Y"), reverse=False)
     
     def search(self, search_term: str, search_type: str = 'name'):
-        result_dict = {}  # Використовуємо словник замість списку
+        result_dict = {}  # Використовуємо словник 
         search_term = search_term.strip().lower()
         
         for record in self.data.values():

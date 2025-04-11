@@ -29,6 +29,7 @@ from utility.show_all_notes import show_all_notes
 from utility.notes_print_handlers import tags_with_notes_print
 from utility.show_help import show_help
 from utility.suggest_command import suggest_command
+from utility.handle_search_contact import handle_search_contact
 from utility.contact_handlers import add_email, add_address
 from utility.contact_handlers import edit_email, edit_address, edit_name, edit_birthday
 
@@ -66,6 +67,7 @@ __all__ = ['parse_input',
            'show_all_notes'
            'show_help',
            'suggest_command',
+           'handle_search_contact'
            'add_email', 
            'add_address',
            'edit_email',
