@@ -15,8 +15,8 @@ def notes_print(notes):
 def tags_with_notes_print(tags_with_notes):
     if len(tags_with_notes)!=0:
         print('--------------------------------------------------------------------------------')
-        for tag in tags_with_notes:
-            print(tag)
+        for i, tag in enumerate(tags_with_notes):
+            print(f"Tag {i+1} : '{tag}'")
             notes_print(tags_with_notes[tag])
     else: 
         print(colorize_message(f"No tags with notes", "YELLOW"))
