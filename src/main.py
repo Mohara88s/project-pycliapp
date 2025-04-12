@@ -72,7 +72,7 @@ def main():
         },
         "add-note": {
             "handler": lambda args: print(add_note(args, notes_book)),
-                "description": "Add a note [add-note \"[TITLE]\" \"[CONTENT]\" [TAG1 TAG2 ...]]"
+                "description": "Add note interactively"
         },
         "note": {
             "handler": lambda args: print(show_note(args, notes_book)),
@@ -83,8 +83,8 @@ def main():
             "description": "Show all notes in the format [all-notes]"
         },
         "edit-note": {
-            "handler": lambda args: print(edit_note(args, notes_book)),
-            "description": "Edit note in the format [edit-note \"[OLD_TITLE]\" \"[NEW_TITLE]\" \"[NEW_CONTENT]\" [TAG1 TAG2 ...]]"
+            "handler": lambda args: edit_note(args, notes_book),
+            "description": "Edit note interactively"
         },
         "delete-note": {
             "handler": lambda args: print(delete_note(args, notes_book)),
