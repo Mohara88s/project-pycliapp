@@ -50,7 +50,7 @@ pip install .
 abot
 ```
 
-### 1. Run development mode
+### 2. Run development mode
 
 ```bash
 abot-dev
@@ -93,7 +93,7 @@ This temporarily adds the path for the current session. To make it permanent, ei
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | `hello`                 | Greet the bot                                                                                                                               |
 | `add-contact`           | Add a new contact or a new phone to the contact in the format `add-contact [NAME] [PHONE]`                                                  |
-| `all-contacts`          | Show all contacts in detail                                                                                                                 |
+| `all-contacts`          | Show all contacts in details                                                                                                                |
 | `delete-contact`        | Delete contact in the format `delete-contact [NAME]`                                                                                        |
 | `edit-name`             | Edit name of a contact in the format `edit-name [OLD_NAME] [NEW_NAME]`                                                                      |
 | `search-contact`        | Search contacts by: name, phone, birthday, email interactively                                                                              |
@@ -110,7 +110,7 @@ This temporarily adds the path for the current session. To make it permanent, ei
 | `delete-address`        | Delete address in the format `delete-address [NAME]`                                                                                        |
 | `add-note`              | Add note interactively                                                                                                                      |
 | `note`                  | Show note by title in the forma `note [TITLE]`                                                                                              |
-| `all-notes`             | Show all notes                                                                                                                               |
+| `all-notes`             | Show all notes                                                                                                                              |
 | `edit-note`             | Edit note interactively                                                                                                                     |
 | `delete-note`           | Delete note by title in the forma `delete-note [TITLE]`                                                                                     |
 | `search-notes`          | Search notes by title, tags or query in the format `search-note title: [TITLE]` or `search-note tags: [TAGS]` or `search-note [QUERY]`      |

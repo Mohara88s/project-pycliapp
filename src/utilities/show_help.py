@@ -1,11 +1,19 @@
 from utilities.colorize import colorize_message
+from rich.console import Console
+from rich.table import Table
 
 def show_help(commands):
-        i=0
-        print(colorize_message("This is available commands:", "GREEN"))
-        for name, info in commands.items():
-            print(colorize_message(f"  {name:<15} - {info['description']}", f"{"CYAN" if i%2==0 else "BLUE"}"))
-            i+=1
+    console = Console()
+
+    table = Table(title="Available commands:", title_style="bold green", style="green", row_styles=["cyan", "blue"] )
+
+    table.add_column("Command")
+    table.add_column("Description")
+
+    for name, info in commands.items():
+        table.add_row(name, info["description"])
+
+    console.print(table)
 
 if __name__ == "__main__":
     pass

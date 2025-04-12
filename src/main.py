@@ -13,7 +13,7 @@ def main():
         },
         "all-contacts": {
             "handler": lambda args: show_all_contacts(get_all_contacts(book)),
-            "description": "Show all contacts in detail"
+            "description": "Show all contacts in details"
         },
         "delete-contact": {
             "handler": lambda args: print(delete_contact(args, book)),
@@ -93,23 +93,23 @@ def main():
         },
         "search-notes": {
             "handler": lambda args: notes_print(search_notes(args, notes_book)),
-            "description": "Search notes by title, tags or query in the format [search-note title: TITLE] or [search-note tags: TAGS] or [search-note QUERY]"
+            "description": "Search notes by title, tags or query in the format [search-note title: [TITLE]] or [search-note tags: [TAGS]] or [search-note [QUERY]]"
         },
         "search-notes-by-tag": {
             "handler": lambda args: tags_with_notes_print(search_and_group_notes_by_tag(args, notes_book)),
-            "description": "Search sorted tags which are similar to query and connectet to them notes in the format [search-notes-by-tag QUERY]"
+            "description": "Search sorted tags which are similar to query and connectet to them notes in the format [search-notes-by-tag [QUERY]]"
         },
         "help": {
             "handler": lambda args: show_help(commands),
-            "description": "Show list of available commands in the format [help]"
+            "description": "Show list of available commands"
         },
         "close": {
             "handler": lambda args: print(colorize_message("Good bye!", "GREEN")),
-            "description": "Сlose the application in the format [close]"
+            "description": "Сlose the application"
         },
         "exit": {
             "handler": lambda args: print(colorize_message("Good bye!", "GREEN")),
-            "description": "Сlose the application in the format [exit]"
+            "description": "Сlose the application"
         }
     }
 
