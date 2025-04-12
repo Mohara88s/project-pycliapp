@@ -4,6 +4,9 @@ from classes.Phone import Phone
 from classes.Email import Email
 from classes.Birthday import Birthday
 from classes.Name import Name
+from utilities.colorize import colorize_message
+
+
 """def handle_search_contact(args, book):
     if not args:
         
@@ -30,7 +33,7 @@ def handle_search_contact(args, book):
             if search_type in valid_search_types:
                 break
             else:
-                print(f"Invalid search type. ") #Valid types: {', '.join(valid_search_types)}
+                print(colorize_message("Invalid search type. ", "YELLOW")) #Valid types: {', '.join(valid_search_types)}
         
         # Подстраиваем запрос под выбранный тип поиска
         if search_type == "name":
@@ -59,9 +62,9 @@ def handle_search_contact(args, book):
                         1 <= int(day) <= 31 and 1 <= int(month) <= 12 and 1000 <= int(year) <= 9999):
                         break
                     else:
-                        print("Incorrect date format. Format DD.ММ.YYYY.")
+                        print(colorize_message("Incorrect date format. Format DD.ММ.YYYY.", "YELLOW"))
                 except ValueError:
-                    print("Incorrect date format. Format DD.ММ.YYYY.")
+                    print(colorize_message("Incorrect date format. Format DD.ММ.YYYY.", "YELLOW"))
 
 
         elif search_type == "email":
