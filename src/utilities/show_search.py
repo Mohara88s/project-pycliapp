@@ -1,7 +1,8 @@
+from utilities.colorize import colorize_message
 
 def show_search(result_dict):
     if not result_dict:
-        print("Nothing found.")
+        print(colorize_message("Nothing found. ", "GREEN"))
         return
 
     for name, record in result_dict.items():

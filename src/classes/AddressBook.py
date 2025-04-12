@@ -65,11 +65,11 @@ class AddressBook(UserDict):
                         result_dict[record.name.value] = record
                 except (ValueError, AttributeError):
                     continue
-            
+
             # Пошук за email
             elif search_type == 'email' and hasattr(record, 'email') and record.email:
                 if search_term.lower() in str(record.email).lower():
-                    result_dict[record.name.value] = record
+                    result_dict[record.name.value] = record    
         
         return result_dict  # Повертаємо словник
     
