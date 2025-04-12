@@ -4,7 +4,7 @@ import os
 def main():
     commands = {
         "hello": {
-            "handler": lambda args: print("How can I help you?"),
+            "handler": lambda args: print(colorize_message("How can I help you?", "GREEN")),
             "description": "Greet the bot"
         },
         "add-contact": {
@@ -104,11 +104,11 @@ def main():
             "description": "Show list of available commands in the format [help]"
         },
         "close": {
-            "handler": lambda args: print("Good bye!"),
+            "handler": lambda args: print(colorize_message("Good bye!", "GREEN")),
             "description": "Сlose the application in the format [close]"
         },
         "exit": {
-            "handler": lambda args: print("Good bye!"),
+            "handler": lambda args: print(colorize_message("Good bye!", "GREEN")),
             "description": "Сlose the application in the format [exit]"
         }
     }
@@ -141,6 +141,7 @@ def main():
                     print(colorize_message(f"Unknown command: '{command}'. Did you mean '{' or '.join(suggestion)}'?", "YELLOW"))
                 else:
                     print(colorize_message(f"Invalid command: '{command}'. You can try the 'help' command.", "YELLOW"))
+        
         # Catch all exceptions
         except Exception as e:
             error_handler(e)
@@ -148,6 +149,7 @@ def main():
             save_addressbook(book)
             save_notes(notes_book)
 
+# func to start abot in dev mode
 def dev_main():
     os.environ["ABOT_DEV_MODE"] = '1'
     main() 
