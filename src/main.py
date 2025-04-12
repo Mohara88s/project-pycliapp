@@ -114,8 +114,7 @@ def main():
 
     exit_commands = ["close", "exit"]
 
-    #temporary mute banner
-    #show_banner()
+    show_banner()
     book = load_addressbook()
     notes_book = load_notes()
     print(colorize_message("Welcome to the assistant bot! If this is your first time, type 'help'.", "GREEN"))

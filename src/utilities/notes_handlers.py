@@ -1,11 +1,12 @@
 from utilities.colorize import colorize_message
+from utilities.user_input_handler import user_input_handler
 
 def add_note(args, notes_book):
     print(colorize_message("=== Add a New Note ===", "CYAN"))
 
     # === Title ===
     while True:
-        title = input("Enter title: ").strip()
+        title = user_input_handler("Enter title: ").strip()
         if not title:
             print(colorize_message("Title cannot be empty.", "RED"))
             continue
@@ -18,7 +19,7 @@ def add_note(args, notes_book):
 
     # === Content ===
     while True:
-        content = input("Enter content: ").strip()
+        content = user_input_handler("Enter content: ").strip()
         if not content:
             print(colorize_message("Content cannot be empty.", "RED"))
             continue
@@ -27,7 +28,7 @@ def add_note(args, notes_book):
     # === Tags ===
     tags = []
     while True:
-        tag = input("Enter a tag: ").strip()
+        tag = user_input_handler("Enter a tag: ").strip()
         if not tag:
             print(colorize_message("Tag cannot be empty.", "YELLOW"))
             continue
@@ -36,7 +37,7 @@ def add_note(args, notes_book):
         else:
             tags.append(tag)
 
-        more = input("Add another tag? (y/n): ").strip().lower()
+        more = user_input_handler("Add another tag? (y/n): ").strip().lower()
         if more != "y":
             break
 
@@ -97,7 +98,7 @@ def edit_note(args, notes_book):
         print(f"{len(notes)+1}. Finish editing")
 
         try:
-            choice = int(input("Enter number: "))
+            choice = int(user_input_handler("Enter number: "))
             if choice == len(notes) + 1:
                 print(colorize_message("You have exited from note editing. Nothing was changed.", "YELLOW"))
                 return
@@ -118,12 +119,12 @@ def edit_note(args, notes_book):
         print("3. Tags")
         print("4. Finish editing")
 
-        action = input("Enter number: ").strip()
+        action = user_input_handler("Enter number: ").strip()
 
         if action == "1":
             print(f"Current title: {new_title}")
             while True:
-                temp = input("Enter new title: ").strip()
+                temp = user_input_handler("Enter new title: ").strip()
                 if not temp:
                     print(colorize_message("Title cannot be empty.", "RED"))
                 else:
@@ -134,7 +135,7 @@ def edit_note(args, notes_book):
         elif action == "2":
             print(f"Current content: {new_content}")
             while True:
-                temp = input("Enter new content: ").strip()
+                temp = user_input_handler("Enter new content: ").strip()
                 if not temp:
                     print(colorize_message("Content cannot be empty.", "RED"))
                 else:
@@ -145,7 +146,7 @@ def edit_note(args, notes_book):
         elif action == "3":
             print(f"Current tags: {' '.join(new_tags)}")
             while True:
-                temp = input("Enter new tags (space separated): ").strip()
+                temp = user_input_handler("Enter new tags (space separated): ").strip()
                 if not temp:
                     print(colorize_message("Tags cannot be empty.", "RED"))
                 else:
