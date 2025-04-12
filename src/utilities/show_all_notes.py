@@ -8,7 +8,7 @@ def show_all_notes(notes_book):
     result = ""
     for note in notes:
         result += (
-            colorize_message(f"\nTitle: {note.title}", "RED") + "\n" +
+            colorize_message(f"Title: {note.title}", "RED") + "\n" +
             colorize_message(f"Tags: {' '.join(note.tags)}", "GREEN") + "\n" +
             colorize_message(f"Content: {note.content}", "CYAN") + "\n" +
             "-" * 30 + "\n"
