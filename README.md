@@ -50,7 +50,7 @@ pip install .
 abot
 ```
 
-### 1. Run development mode
+### 2. Run development mode
 
 ```bash
 abot-dev
