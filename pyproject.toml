@@ -11,3 +11,4 @@ dependencies = [
 
 [project.scripts]
 abot = "main:main"
+abot-dev = "main:dev_main"

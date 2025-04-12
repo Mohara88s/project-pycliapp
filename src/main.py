@@ -1,4 +1,5 @@
 from utilities import *
+import os
 
 def main():
     commands = {
@@ -12,7 +13,7 @@ def main():
         },
         "all-contacts": {
             "handler": lambda args: show_all_contacts(get_all_contacts(book)),
-            "description": "Show all contacts in detail in the format [all-contacts]"
+            "description": "Show all contacts in detail"
         },
         "delete-contact": {
             "handler": lambda args: print(delete_contact(args, book)),
@@ -24,7 +25,7 @@ def main():
         },
         "search-contact": {
             "handler": lambda args: handle_search_contact(args, book),
-            "description": "Search contacts by: name, phone, birthday, emailin the format [search-contact] for interactive mode"
+            "description": "Search contacts by: name, phone, birthday, email interactively"
         },
         "phone": {
             "handler": lambda args: print(', '.join(show_phone(args, book))),
@@ -80,7 +81,7 @@ def main():
         },
         "all-notes": {
             "handler": lambda args: print(show_all_notes(notes_book)),
-            "description": "Show all notes in the format [all-notes]"
+            "description": "Show all notes"
         },
         "edit-note": {
             "handler": lambda args: edit_note(args, notes_book),
@@ -90,7 +91,7 @@ def main():
             "handler": lambda args: print(delete_note(args, notes_book)),
             "description": "Delete note by title in the format [delete-note [TITLE]]"
         },
-        "search-note": {
+        "search-notes": {
             "handler": lambda args: notes_print(search_notes(args, notes_book)),
             "description": "Search notes by title, tags or query in the format [search-note title: TITLE] or [search-note tags: TAGS] or [search-note QUERY]"
         },
@@ -114,7 +115,9 @@ def main():
 
     exit_commands = ["close", "exit"]
 
-    show_banner()
+    if not os.getenv("ABOT_DEV_MODE") == '1':
+        show_banner()
+
     book = load_addressbook()
     notes_book = load_notes()
     print(colorize_message("Welcome to the assistant bot! If this is your first time, type 'help'.", "GREEN"))
@@ -145,5 +148,9 @@ def main():
             save_addressbook(book)
             save_notes(notes_book)
 
+def dev_main():
+    os.environ["ABOT_DEV_MODE"] = '1'
+    main() 
+    
 if __name__ == "__main__":
     main()

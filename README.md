@@ -30,7 +30,7 @@ git clone https://github.com/Mohara88s/project-pycliapp
 cd assistant-bot
 ```
 
-### 2. Install in development mode:
+### 2. Install in editable mode:
 ```bash
 pip install -e .
 ```
@@ -42,15 +42,23 @@ pip install .
 
 ---
 
-## ▶️ Run in console
+## ▶️ Run in console 
+
+### 1. Run user mode
 
 ```bash
 abot
 ```
 
+### 1. Run development mode
+
+```bash
+abot-dev
+```
+
 ---
 
-## ⚠️ If the command is not recognized (Windows)
+## ⚠️ If the start command is not recognized (Windows)
 
 After installing with:
 
@@ -85,10 +93,10 @@ This temporarily adds the path for the current session. To make it permanent, ei
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | `hello`                 | Greet the bot                                                                                                                               |
 | `add-contact`           | Add a new contact or a new phone to the contact in the format `add-contact [NAME] [PHONE]`                                                  |
-| `all-contacts`          | Show all contacts in detail in the format `all-contacts`                                                                                    |
+| `all-contacts`          | Show all contacts in detail                                                                                                                 |
 | `delete-contact`        | Delete contact in the format `delete-contact [NAME]`                                                                                        |
 | `edit-name`             | Edit name of a contact in the format `edit-name [OLD_NAME] [NEW_NAME]`                                                                      |
-| `search-contact`        | Search contacts by: name, phone, birthday, email in the format `search-contact` for interactive mode                                        |
+| `search-contact`        | Search contacts by: name, phone, birthday, email interactively                                                                              |
 | `phone`                 | Show available phone numbers by name in the format `phone [NAME]`                                                                           |
 | `edit-phone`            | Change contact phone number in the format `edit-phone NAME [OLD_PHONE] [NEW_PHONE]`                                                         |
 | `add-birthday`          | Add date of birth to a contact in the format `add-birthday [NAME] [DD.MM.YYYY]`                                                             |
@@ -100,12 +108,12 @@ This temporarily adds the path for the current session. To make it permanent, ei
 | `add-address`           | Add address to contact in the format `add-address [NAME] [ADDRESS]`                                                                         |
 | `edit-address`          | Edit address of a contact in the format `edit-address [NAME] [NEW_ADDRESS]`                                                                 |
 | `delete-address`        | Delete address in the format `delete-address [NAME]`                                                                                        |
-| `add-note`              | Add note in the format `add-note [TITLE] "[CONTENT]" [TAG1 TAG2 ...]`                                                                       |
+| `add-note`              | Add note interactively                                                                                                                      |
 | `note`                  | Show note by title in the forma `note [TITLE]`                                                                                              |
-| `all-notes`             | Show all notes  in the format `all-notes`                                                                                                   |
-| `edit-note`             | Edit note in the format `edit-note "[OLD_TITLE]" "[NEW_TITLE]" "[NEW_CONTENT]" [TAG1 TAG2 ...]`                                             |
+| `all-notes`             | Show all notes                                                                                                                               |
+| `edit-note`             | Edit note interactively                                                                                                                     |
 | `delete-note`           | Delete note by title in the forma `delete-note [TITLE]`                                                                                     |
-| `search-note`           | Search notes by title, tags or query in the format `search-note title: [TITLE]` or `search-note tags: [TAGS]` or `search-note [QUERY]`      |
+| `search-notes`          | Search notes by title, tags or query in the format `search-note title: [TITLE]` or `search-note tags: [TAGS]` or `search-note [QUERY]`      |
 | `search-notes-by-tag`   | Search sorted tags which are similar to query and connectet to them notes in the format `search-notes-by-tag [QUERY]`                       |
 | `help`                  | Show list of available commands                                                                                                             |
 | `close` / `exit`        | Exit the assistant                                                                                                                          |
