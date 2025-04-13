@@ -73,3 +73,47 @@ add-contact Serhiy Kodenko 0635552345
 add-email Serhiy Kodenko serhiy.kodenko@mail.com
 add-address Serhiy Kodenko 56 Shevchenka Avenue Lviv
 add-birthday Serhiy Kodenko 10.03.1990
+
+
+
+
+
+Title: Dirty Laundry
+Content: Take the dirty laundry to the laundromat on Monday.
+Tags: clothes, chores
+
+Title: Grocery List
+Content: Buy milk, bread, eggs, and bananas from the store.
+Tags: shopping, food
+
+Title: Project Deadline
+Content: Submit the final project report by Friday 5 PM.
+Tags: work, deadline
+
+Title: Call Mom
+Content: Don’t forget to call Mom on Sunday evening.
+Tags: family, reminder
+
+Title: Book Appointment
+Content: Schedule a dentist appointment for next Wednesday.
+Tags: health, personal
+
+Title: Study Plan
+Content: Review chapters 5 to 7 for the math test.
+Tags: school, study
+
+Title: Weekend Trip
+Content: Pack the bags, check car fuel, and leave by 8 AM Saturday.
+Tags: travel, weekend
+
+Title: Birthday Gift
+Content: Buy a present for Anna’s birthday.
+Tags: birthday, gifts
+
+Title: Meeting Notes
+Content: Discussed Q2 targets, marketing plan, and budget allocations.
+Tags: work, meeting
+
+Title: Clean Desk
+Content: Organize documents and wipe down the desk surface.
+Tags: chores, cleaning
