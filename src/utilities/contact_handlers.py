@@ -44,6 +44,16 @@ def get_all_contacts(book: AddressBook):
         list_of_contacts.append(Contact_tuple(name, record.get_phones, record.get_birthday, record.get_email, record.get_address))
     return sorted(list_of_contacts)
 
+def show_phone(args, book: AddressBook):
+    if len(args)<1:
+        raise ValueError("Please give me the contact's name")
+    name, *_ = args
+    record = book.find(name)
+    if record is None:
+        raise Exception(f"The contact {name} is not found")
+    message = f'{', '.join(record.get_phones)}'
+    return colorize_message(message, "GREEN")
+
 def add_email(args, book):
     if len(args)<2:
         raise ValueError("Please give me the contact's name and email")

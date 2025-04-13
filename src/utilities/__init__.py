@@ -1,5 +1,5 @@
 from utilities.colorize import colorize_message
-from utilities.contact_handlers import add_address, add_birthday, add_contact, add_email
+from utilities.contact_handlers import add_address, add_birthday, add_contact, add_email, show_phone
 from utilities.contact_handlers import change_contact
 from utilities.contact_handlers import delete_address, delete_contact
 from utilities.contact_handlers import edit_address, edit_birthday, edit_email, edit_name
@@ -8,7 +8,6 @@ from utilities.error_handler import error_handler
 from utilities.handle_search_contact import handle_search_contact
 from utilities.notes_handlers import add_note, delete_note, edit_note, search_note, show_all_notes, generate_boxed_notes, delete_all_notes
 from utilities.parse_input_handler import parse_input
-from utilities.phone_handler import show_phone
 from utilities.show_all_contacts import show_all_contacts
 from utilities.show_banner import show_banner
 from utilities.show_birthdays import show_birthdays

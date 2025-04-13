@@ -28,7 +28,7 @@ def main():
             "description": "Search contacts by: name, phone, birthday, email interactively"
         },
         "phone": {
-            "handler": lambda args: print(', '.join(show_phone(args, book))),
+            "handler": lambda args: print(show_phone(args, book)),
             "description": "Show available phone numbers by name in the format [phone [NAME]]"
         },
         "edit-phone": {
