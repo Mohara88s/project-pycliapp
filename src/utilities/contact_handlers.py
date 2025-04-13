@@ -3,9 +3,10 @@ from classes import AddressBook, Record
 from utilities.colorize import colorize_message
 
 def add_contact(args, book: AddressBook):
-    if len(args)<2:
-        raise ValueError("Please give me the contact's name and phone")
-    name, phone, *_ = args
+    if len(args)<3:
+        raise ValueError("Please give me the contact's first and last name and phone")
+    first_name, last_name, phone, *_ = args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     message = "Contact updated"
     if record is None:
@@ -18,9 +19,10 @@ def add_contact(args, book: AddressBook):
 
 
 def change_contact(args, book: AddressBook):
-    if len(args)<3:
-        raise ValueError("Please give me the contact's name, old phone and new phone")
-    name, phone, new_phone, *_ = args
+    if len(args)<4:
+        raise ValueError("Please give me the contact's first and last name, old phone and new phone")
+    first_name, last_name, phone, new_phone, *_ = args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     if record is None:
         raise Exception(f"The contact {name} is not found")
@@ -30,9 +32,10 @@ def change_contact(args, book: AddressBook):
 
 
 def delete_contact(args, book: AddressBook):
-    if len(args)<1:
-        raise ValueError("Please give me the contact's name")
-    name, *_ = args
+    if len(args)<2:
+        raise ValueError("Please give me the contact's first and last name")
+    first_name, last_name, *_ = args
+    name = first_name + ' ' + last_name
     book.delete(name)
     message = "Contact deleted"
     return colorize_message(message, "GREEN")
@@ -45,9 +48,10 @@ def get_all_contacts(book: AddressBook):
     return sorted(list_of_contacts)
 
 def show_phone(args, book: AddressBook):
-    if len(args)<1:
-        raise ValueError("Please give me the contact's name")
-    name, *_ = args
+    if len(args)<2:
+        raise ValueError("Please give me the contact's first and last name")
+    first_name, last_name, *_ = args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     if record is None:
         raise Exception(f"The contact {name} is not found")
@@ -55,9 +59,10 @@ def show_phone(args, book: AddressBook):
     return colorize_message(message, "GREEN")
 
 def add_email(args, book):
-    if len(args)<2:
-        raise ValueError("Please give me the contact's name and email")
-    name, email = args
+    if len(args)<3:
+        raise ValueError("Please give me the contact's first and last name and email")
+    first_name, last_name, email = args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     if not record:
         return f"No contact found with name: {name}"
@@ -66,9 +71,10 @@ def add_email(args, book):
     return colorize_message(message, "GREEN")
     
 def add_address(args, book):
-    if len(args)<2:
-        raise ValueError("Please give me the contact's name and address")
-    name, address, *_ = args
+    if len(args)<3:
+        raise ValueError("Please give me the contact's first and last name and address")
+    first_name, last_name, address, *_ = args
+    name = first_name + ' ' + last_name
     address = " ".join(args[1:])
     record = book.find(name)
     if not record:
@@ -78,9 +84,10 @@ def add_address(args, book):
     return colorize_message(message, "GREEN")
 
 def edit_email(args, book):
-    if len(args)<2:
-        raise ValueError("Please give me the contact's name and email")
-    name, new_email = args
+    if len(args)<3:
+        raise ValueError("Please give me the contact's first and last name and email")
+    first_name, last_name, new_email = args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     if not record:
         return f"No contact found with name: {name}"
@@ -89,9 +96,10 @@ def edit_email(args, book):
     return colorize_message(message, "GREEN")
 
 def edit_address(args, book):
-    if len(args)<2:
-        raise ValueError("Please give me the contact's name and address")
-    name, *new_address = args
+    if len(args)<3:
+        raise ValueError("Please give me the contact's first and last name and address")
+    first_name, last_name, *new_address = args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     new_address_str = " ".join(new_address)
     if not record:
@@ -109,10 +117,11 @@ def delete_email(args, book: AddressBook):
     return colorize_message(message, "GREEN")
 
 def delete_address(args, book: AddressBook):
-    if len(args) !=1:
-        raise ValueError("Please give me the contact's name")
+    if len(args) !=2:
+        raise ValueError("Please give me the contact's first and last name")
 
-    name = args[0]
+    first_name, last_name, *_= args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     if not isinstance(record, Record):
         return(f"No contact with the name '{name}' exists")
@@ -124,22 +133,21 @@ def delete_address(args, book: AddressBook):
         return("Address not found for this contact")
     
 def edit_name(args, book):
-    if len(args)<2:
-        raise ValueError("Please give me the contact's old name and new name")
-    old_name, new_name = args
-    record = book.pop(old_name, None)
-    if not record:
-        return f"No contact found with name: {old_name}"
-    record.name.value = new_name
-    book[new_name] = record
+    if len(args)<4:
+        raise ValueError("Please give me the contact's old first and last name and new first and last name")
+    old_first_name, old_last_name, new_first_name, new_last_name, *_ = args
+    old_name = old_first_name +' '+ old_last_name
+    new_name = new_first_name +' '+ new_last_name
+    book.edit_name(old_name, new_name)
     message = f"Name changed from '{old_name}' to '{new_name}'"
     return colorize_message(message, "GREEN")
 
 
 def add_birthday(args, book: AddressBook):
-    if len(args)<2:
-        raise ValueError(f"Please give me the contact's name and birthday date")
-    name, birthay, *_ = args
+    if len(args)<3:
+        raise ValueError(f"Please give me the contact's first and last name and birthday date")
+    first_name, last_name, birthay, *_ = args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     if record is None:
         raise Exception(f"The contact {name} is not found")
@@ -149,9 +157,10 @@ def add_birthday(args, book: AddressBook):
 
 
 def show_birthday(args, book: AddressBook):
-    if len(args)<1:
-        raise ValueError(f"Please give me the contact's name")
-    name, *_ = args
+    if len(args)<2:
+        raise ValueError(f"Please give me the contact's first and last name")
+    first_name, last_name, *_ = args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     if record is None:
         raise Exception(f"The contact {name} is not found")
@@ -175,9 +184,10 @@ def get_upcoming_birthdays(args, book: AddressBook):
     return list_of_birthdays
 
 def edit_birthday(args, book):
-    if len(args)<2:
-        raise ValueError("Please give me the contact's name and birthday date")
-    name, new_birthday = args
+    if len(args)<3:
+        raise ValueError("Please give me the contact's first and last name and birthday date")
+    first_name, last_name, new_birthday, *_ = args
+    name = first_name + ' ' + last_name
     record = book.find(name)
     if not record:
         return f"No contact found with name: {name}"

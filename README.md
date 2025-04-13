@@ -89,32 +89,32 @@ This temporarily adds the path for the current session. To make it permanent, ei
 
 ## 💬 Commands
 
-| Command                 | Description                                                                                                  |
-|-------------------------|--------------------------------------------------------------------------------------------------------------|
-| `hello`                 | Greet the bot                                                                                                |
-| `all-contacts`          | Show all contacts in details                                                                                 |
-| `delete-contact`        | Delete contact in the format `delete-contact [NAME]`                                                         |
-| `edit-name`             | Edit name of a contact in the format `edit-name [OLD_NAME] [NEW_NAME]`                                       |
-| `search-contact`        | Search contacts by: name, phone, birthday, email interactively                                               |
-| `phone`                 | Show available phone numbers by name in the format `phone [NAME]`                                            |
-| `edit-phone`            | Change contact phone number in the format `edit-phone NAME [OLD_PHONE] [NEW_PHONE]`                          |
-| `add-birthday`          | Add date of birth to a contact in the format `add-birthday [NAME] [DD.MM.YYYY]`                              |
-| `edit-birthday`         | Edit birthday of a contact in the format `edit-birthday [NAME] [DD.MM.YYYY]`                                 |
-| `birthday`              | Show contact's date of birth in the format `birthday [NAME]`                                                 |
-| `birthdays`             | Show upcoming birthdays in the format `birthdays [LIMIT_OF_DAYS_UNTIL_BIRTHDAY]`                             |
-| `add-email`             | Add email to contact in the format `add-email [NAME] [EMAIL]`                                                |
-| `edit-email`            | Edit email of a contact in the format `edit-email [NAME] [NEW_EMAIL]`                                        |
-| `add-address`           | Add address to contact in the format `add-address [NAME] [ADDRESS]`                                          |
-| `edit-address`          | Edit address of a contact in the format `edit-address [NAME] [NEW_ADDRESS]`                                  |
-| `delete-address`        | Delete address in the format `delete-address [NAME]`                                                         |
-| `add-note`              | Add note interactively                                                                                       |
-| `all-notes`             | Show all notes                                                                                               |
-| `edit-note`             | Edit note interactively                                                                                      |
-| `delete-note`           | Delete note interactively                                                      |
-| `delete-all-notes`      | Delete all notes with confirmation                                                                           |
-| `search-notes`          | Search notes by title, tag, tag grupped or content interactively                                             |
-| `help`                  | Show list of available commands                                                                              |
-| `close` / `exit`        | Exit the assistant                                                                                           |
+| Command                 | Description                                                                                                         |
+|-------------------------|---------------------------------------------------------------------------------------------------------------------|
+| `hello`                 | Greet the bot                                                                                                       |
+| `all-contacts`          | Show all contacts in details                                                                                        |
+| `delete-contact`        | Delete contact in the format `delete-contact [FIRST_NAME] [LAST_NAME]`                                              |
+| `edit-name`             | Edit name of a contact in the format `edit-name [OLD_FIRST_NAME] [OLD_LAST_NAME] [NEW_FIRST_NAME] [NEW_LAST_NAME]`  |
+| `search-contact`        | Search contacts by: name, phone, birthday, email interactively                                                      |
+| `phone`                 | Show available phone numbers by name in the format `phone [FIRST_NAME] [LAST_NAME]`                                 |
+| `edit-phone`            | Change contact phone number in the format `edit-phone NAME [OLD_PHONE] [NEW_PHONE]`                                 |
+| `add-birthday`          | Add date of birth to a contact in the format `add-birthday [FIRST_NAME] [LAST_NAME] [DD.MM.YYYY]`                   |
+| `edit-birthday`         | Edit birthday of a contact in the format `edit-birthday [FIRST_NAME] [LAST_NAME] [DD.MM.YYYY]`                      |
+| `birthday`              | Show contact's date of birth in the format `birthday [FIRST_NAME] [LAST_NAME]`                                      |
+| `birthdays`             | Show upcoming birthdays in the format `birthdays [LIMIT_OF_DAYS_UNTIL_BIRTHDAY]`                                    |
+| `add-email`             | Add email to contact in the format `add-email [FIRST_NAME] [LAST_NAME] [EMAIL]`                                     |
+| `edit-email`            | Edit email of a contact in the format `edit-email [FIRST_NAME] [LAST_NAME] [NEW_EMAIL]`                             |
+| `add-address`           | Add address to contact in the format `add-address [FIRST_NAME] [LAST_NAME] [ADDRESS]`                               |
+| `edit-address`          | Edit address of a contact in the format `edit-address [FIRST_NAME] [LAST_NAME] [NEW_ADDRESS]`                       |
+| `delete-address`        | Delete address in the format `delete-address [FIRST_NAME] [LAST_NAME]`                                              |
+| `add-note`              | Add note interactively                                                                                              |
+| `all-notes`             | Show all notes                                                                                                      |
+| `edit-note`             | Edit note interactively                                                                                             |
+| `delete-note`           | Delete note interactively                                                                                           |
+| `delete-all-notes`      | Delete all notes with confirmation                                                                                  |
+| `search-notes`          | Search notes by title, tag, tag grupped or content interactively                                                    |
+| `help`                  | Show list of available commands                                                                                     |
+| `close` / `exit`        | Exit the assistant                                                                                                  |
 
 ---
 

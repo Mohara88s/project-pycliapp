@@ -13,14 +13,24 @@ class AddressBook(UserDict):
         self.data[record.name.value] = record
             
     def find(self, name):
-        result = self.data.get(name.capitalize(), None)
+        result = self.data.get(' '.join(word.capitalize() for word in name.strip().split()), None)
         return result
 
     def delete(self, name):
-        if not name.capitalize() in self.data:
-            raise Exception(f"The contact with name:{name.capitalize()} is not found")
-        del self.data[name.capitalize()]
-
+        if not ' '.join(word.capitalize() for word in name.strip().split()) in self.data:
+            raise Exception(f"The contact with name:{' '.join(word.capitalize() for word in name.strip().split())} is not found")
+        del self.data[' '.join(word.capitalize() for word in name.strip().split())]
+    
+    def edit_name(self, old_name, new_name):
+        record = self.data.get(' '.join(word.capitalize() for word in old_name.strip().split()), None)
+        if record == None:
+            raise Exception(f"The contact with name:{' '.join(word.capitalize() for word in old_name.strip().split())} is not found")
+        new_name_obj = Name(new_name)
+        record.name = new_name_obj
+        self.data[new_name_obj.value] = record
+        old_key = ' '.join(word.capitalize() for word in old_name.strip().split())
+        del self.data[old_key]
+    
     @property
     def get_all_records(self):
         return self.data
@@ -47,7 +57,7 @@ class AddressBook(UserDict):
         
         for record in self.data.values():
             # Search for name
-            if search_type == 'name' and search_term in record.name.value.lower():
+            if search_type == 'name' and search_term in ' '.join(word.lower() for word in record.name.value):
                 result_dict[record.name.value] = record
             
             # search for phone

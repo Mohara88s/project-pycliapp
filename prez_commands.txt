@@ -1,0 +1,75 @@
+add-contact John Snow 0501112233
+add-contact John Snow 0931234567
+add-email John Snow john.snow@nightswatch.org
+add-address John Snow Castle Black The Wall
+add-birthday John Snow 01.12.1990
+
+add-contact Alice Smith 0671112244
+add-email Alice Smith alice.smith@gmail.com
+add-address Alice Smith 45 Rose Lane Lviv
+add-birthday Alice Smith 22.07.1992
+
+add-contact Bob Johanson 0503334455
+add-email Bob Johanson bob.johanson@business.com
+add-address Bob Johanson 9 Ocean Avenue Odesa
+add-birthday Bob Johanson 05.11.1978
+
+add-contact Eva Browning 0632223344
+add-email Eva Browning eva.browning@mail.com
+add-address Eva Browning 7 Highland Rd Dnipro
+add-birthday Eva Browning 01.01.1990
+
+add-contact Alexander Repeta 0631112233
+add-email Alexander Repeta alex.repeta@itcraft.ua
+add-address Alexander Repeta 88 Startup Street Kyiv
+add-birthday Alexander Repeta 19.03.1986
+
+add-contact Anton Chornyi 0672223344
+add-email Anton Chornyi anton.chornyi@gmail.com
+add-address Anton Chornyi 12 Tech Lane Kharkiv
+add-birthday Anton Chornyi 10.10.1991
+
+add-contact Lara Craft 0501234567
+add-email Lara Craft lara.craft@tombraider.com
+add-address Lara Craft 1 Adventure Rd London
+add-birthday Lara Craft 14.02.1984
+
+add-contact Tony Stark 0681234567
+add-email Tony Stark tony.stark@starkindustries.com
+add-address Tony Stark Stark Tower NYC
+add-birthday Tony Stark 29.05.1970
+
+add-contact Diana Prince 0991112244
+add-email Diana Prince diana.prince@themyscira.org
+add-address Diana Prince 100 Amazon Way Themyscira
+add-birthday Diana Prince 08.03.1985
+
+add-contact Bruce Wayne 0503330011
+add-email Bruce Wayne bruce.wayne@wayneenterprises.com
+add-address Bruce Wayne Wayne Manor Gotham
+add-birthday Bruce Wayne 19.02.1972
+
+add-contact Peter Parker 0634445566
+add-email Peter Parker peter.parker@dailybugle.com
+add-address Peter Parker 20 Queens Ave NYC
+add-birthday Peter Parker 10.08.1998
+
+add-contact Natasha Romanoff 0662223311
+add-email Natasha Romanoff natasha.r@shield.gov
+add-address Natasha Romanoff Red Room Russia
+add-birthday Natasha Romanoff 30.11.1983
+
+add-contact Eduard Litvinchuk 0505551234
+add-email Eduard Litvinchuk eduard.litvinchuk@mail.com
+add-address Eduard Litvinchuk 12 Ivan Franko Street Kyiv
+add-birthday Eduard Litvinchuk 25.09.1988
+
+add-contact Alina Pysarenko 0675559876
+add-email Alina Pysarenko alina.pysarenko@gmail.com
+add-address Alina Pysarenko 34 Khreschatyk Street Kyiv
+add-birthday Alina Pysarenko 15.06.1992
+
+add-contact Serhiy Kodenko 0635552345
+add-email Serhiy Kodenko serhiy.kodenko@mail.com
+add-address Serhiy Kodenko 56 Shevchenka Avenue Lviv
+add-birthday Serhiy Kodenko 10.03.1990
