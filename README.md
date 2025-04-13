@@ -140,14 +140,10 @@ project-pycliapp/
 
 Created with ❤️ by **ThePythonWay** team:
 
-**Team Lead:** 
-
-Vitalii Vasylets
+**Team Lead** Vitalii Vasylets
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Mohara88s)
  
-**Scrum Master:**
-
-Kostiantyn Talamaniuk
+**Scrum Master/Developer** Kostiantyn Talamaniuk
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/antifloodbot)
 
 **Developers:** 
