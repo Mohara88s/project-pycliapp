@@ -3,10 +3,13 @@ from utilities.user_input_handler import user_input_handler
 from classes.Phone import Phone
 from classes.Email import Email
 from classes.Birthday import Birthday
-from classes.Name import Name
 from utilities.colorize import colorize_message
     
 def handle_search_contact(args, book):
+    """
+    Allows interactive searching for contacts by various criteria.
+    Includes input validation for each search type and displays formatted results.
+    """
     valid_search_types = ["name", "phone", "birthday", "email"]
     
     # Interactive mode

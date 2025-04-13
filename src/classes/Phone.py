@@ -1,6 +1,10 @@
 from classes.Field import Field
 
 class Phone(Field):    
+    """  
+    Provides phone number storage with validation for 10-digit format.  
+    Includes full validation and digit format enforcement.  
+    """  
     def __init__(self, phone):
         validated_phone = self.phone_validation(phone)
         super().__init__(validated_phone)

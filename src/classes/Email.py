@@ -2,6 +2,10 @@ from classes.Field import Field
 import re
 
 class Email(Field):
+    """
+   Handles storage and validation of contact email addresses.
+   Ensures emails meet required format using regex pattern matching.
+   """
     def __init__(self, email):
         validated_email = self.email_validation(email)
         super().__init__(validated_email)
