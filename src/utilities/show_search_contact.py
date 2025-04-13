@@ -1,6 +1,10 @@
 from utilities.colorize import colorize_message
 
 def show_search_contact(result_dict):
+    """
+    Displays formatted search results from the address book.
+    Includes visual separation and emoji icons for better readability.
+    """
     if not result_dict:
         print(colorize_message("Nothing found. ", "YELLOW"))
         return

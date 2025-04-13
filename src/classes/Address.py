@@ -1,6 +1,10 @@
 from classes.Field import Field
 
 class Address(Field):
+    """
+   Handles storage and validation of contact address information.
+   Ensures addresses meet required format and length constraints.
+    """
     def __init__(self, address):
         validated_address = self.address_validation(address)
         super().__init__(validated_address)

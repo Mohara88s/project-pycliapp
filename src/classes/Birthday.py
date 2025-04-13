@@ -3,6 +3,10 @@ from classes.Field import Field
 import re
 
 class Birthday(Field):
+    """
+   Handles storage and validation of contact birthday information.
+   Ensures dates are properly formatted and converts string dates to datetime objects.
+   """
     def __init__(self, value):
         validated_date = self.validate_birthday(value)
         super().__init__(validated_date)

@@ -5,7 +5,10 @@ from classes.Name import Name
 from classes.Phone import Phone
 
 class AddressBook(UserDict):
-
+    """
+    Manages a collection of contact records with various search and manipulation capabilities.
+    Extends UserDict to provide dictionary-like functionality with additional contact management features.
+    """
     def __getitem__(self, key):
         return self.data.get(key, "Key not found")
     
@@ -36,6 +39,10 @@ class AddressBook(UserDict):
         return self.data
 
     def get_upcoming_birthdays(self, days_to_bd:int)->list:
+        """
+        Finds contacts with birthdays within the specified number of days.
+        Returns a sorted list of contacts with their upcoming celebration dates.
+        """
         if not isinstance(days_to_bd, int) or days_to_bd <= 0:
             raise Exception("Days must be a positive integer")
         records_to_congr = []
@@ -52,6 +59,10 @@ class AddressBook(UserDict):
         return sorted(records_to_congr, key=lambda x: datetime.strptime(x["congratulation_date"], "%d.%m.%Y"), reverse=False)
     
     def search(self, search_term: str, search_type: str = 'name'):
+        """
+        Performs flexible search across contact records by different criteria.
+        Supports searching by name, phone, birthday, and email with partial matching.
+        """
         result_dict = {} 
         search_term = search_term.strip().lower()
         
