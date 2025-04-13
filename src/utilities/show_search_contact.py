@@ -1,6 +1,6 @@
 from utilities.colorize import colorize_message
 
-def show_search(result_dict):
+def show_search_contact(result_dict):
     if not result_dict:
         print(colorize_message("Nothing found. ", "YELLOW"))
         return

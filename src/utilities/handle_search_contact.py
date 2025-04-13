@@ -1,4 +1,4 @@
-from utilities.show_search import show_search
+from utilities.show_search_contact import show_search_contact
 from utilities.user_input_handler import user_input_handler
 from classes.Phone import Phone
 from classes.Email import Email
@@ -51,4 +51,4 @@ def handle_search_contact(args, book):
             except Exception as e:
                 print(colorize_message(str(e), "YELLOW"))
     
-    return show_search(book.search(search_term, search_type))
+    return show_search_contact(book.search(search_term, search_type))

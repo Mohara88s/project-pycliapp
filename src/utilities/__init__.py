@@ -12,7 +12,7 @@ from utilities.show_all_contacts import show_all_contacts
 from utilities.show_banner import show_banner
 from utilities.show_birthdays import show_birthdays
 from utilities.show_help import show_help
-from utilities.show_search import show_search
+from utilities.show_search_contact import show_search_contact
 from utilities.storage_handlers import load_addressbook, load_notes, save_addressbook, save_notes
 from utilities.suggest_command import suggest_command
 from utilities.user_input_handler import user_input_handler
@@ -52,7 +52,7 @@ __all__ = [
     'show_birthday',
     'show_help',
     'show_phone',
-    'show_search',
+    'show_search_contact',
     'suggest_command',
     'user_input_handler',
 ]
