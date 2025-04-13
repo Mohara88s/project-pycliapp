@@ -6,7 +6,7 @@ class Address(Field):
 
     @staticmethod
     def address_validation(address: str) -> str:
-        # Перевірка, що адреса не пуста
+        # Address validation
         if not isinstance(address, str):
             raise ValueError("Address must be a string.")
         if not 5<= len(address) <=100:

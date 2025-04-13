@@ -6,7 +6,7 @@ class Email(Field):
         self.value = self.email_validation(email)
 
     def email_validation(self, email):
-        # Перевірка на валідність email за допомогою регулярного виразу
+        # Email validation using regular expressions
         pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
         if not re.match(pattern, email):
             raise Exception("Invalid email format")
