@@ -27,7 +27,7 @@ A command-line assistant written in Python for managing contacts, phone numbers,
 ### 1. Clone the repository:
 ```bash
 git clone https://github.com/Mohara88s/project-pycliapp
-cd assistant-bot
+cd project-pycliapp
 ```
 
 ### 2. Install in editable mode:
