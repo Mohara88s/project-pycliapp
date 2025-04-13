@@ -7,7 +7,6 @@ from utilities.contact_handlers import get_all_contacts, get_upcoming_birthdays,
 from utilities.error_handler import error_handler
 from utilities.handle_search_contact import handle_search_contact
 from utilities.notes_handlers import add_note, delete_note, edit_note, search_note, show_all_notes, generate_boxed_notes, delete_all_notes
-from utilities.notes_print_handlers import notes_print, tags_with_notes_print
 from utilities.parse_input_handler import parse_input
 from utilities.phone_handler import show_phone
 from utilities.show_all_contacts import show_all_contacts
@@ -43,7 +42,6 @@ __all__ = [
     'handle_search_contact',
     'load_addressbook',
     'load_notes',
-    'notes_print',
     'parse_input',
     'save_addressbook',
     'save_notes',
@@ -57,6 +55,5 @@ __all__ = [
     'show_phone',
     'show_search',
     'suggest_command',
-    'tags_with_notes_print',
     'user_input_handler',
 ]
