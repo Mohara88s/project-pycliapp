@@ -71,10 +71,6 @@ def main():
             "handler": lambda args: print(delete_address(args, book)),
             "description": "Delete address in the format [delete-address [NAME]]"
         },
-        "search-note": {
-            "handler": lambda args: search_note(args, notes_book),
-            "description": "Search note by title, tag or content interactively"
-        },
         "add-note": {
             "handler": lambda args: print(add_note(args, notes_book)),
                 "description": "Add note interactively"
@@ -94,6 +90,10 @@ def main():
         "delete-all-notes": {
             "handler": lambda args: delete_all_notes(args, notes_book),
             "description": "Delete all notes with confirmation"
+        },
+        "search-notes": {
+            "handler": lambda args: search_note(args, notes_book),
+            "description": "Search notes by title, tag, tag grupped or content interactively"
         },
         "help": {
             "handler": lambda args: show_help(commands),
