@@ -73,9 +73,9 @@ def add_email(args, book):
 def add_address(args, book):
     if len(args)<3:
         raise ValueError("Please give me the contact's first and last name and address")
-    first_name, last_name, address, *_ = args
+    first_name, last_name, *address = args
     name = first_name + ' ' + last_name
-    address = " ".join(args[1:])
+    address = " ".join(address)
     record = book.find(name)
     if not record:
         return f"No contact found with name: {name}"
