@@ -6,7 +6,8 @@ class Email(Field):
         validated_email = self.email_validation(email)
         super().__init__(validated_email)
 
-    def email_validation(self, email):
+    @staticmethod
+    def email_validation(email):
         # Email validation using regular expressions
         pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
         if not re.match(pattern, email):

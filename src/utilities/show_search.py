@@ -2,7 +2,7 @@ from utilities.colorize import colorize_message
 
 def show_search(result_dict):
     if not result_dict:
-        print(colorize_message("Nothing found. ", "GREEN"))
+        print(colorize_message("Nothing found. ", "YELLOW"))
         return
 
     for name, record in result_dict.items():
