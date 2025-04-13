@@ -1,5 +1,7 @@
 from utilities.colorize import colorize_message
 from utilities.user_input_handler import user_input_handler
+from collections import defaultdict
+
 
 def add_note(args, notes_book):
     """
@@ -177,8 +179,9 @@ def search_note(args, notes_book):
         print("How would you like to search?")
         print("1. By title")
         print("2. By tag")
-        print("3. By content")
-        print("4. Cancel")
+        print("3. By tag grupped")
+        print("4. By content")
+        print("5. Cancel")
 
         choice = user_input_handler("Enter number: ").strip()
 
@@ -192,9 +195,13 @@ def search_note(args, notes_book):
                 if any(keyword in tag.lower() for tag in note.tags)
             ]
         elif choice == "3":
+            keyword = user_input_handler("Enter tag or part of it: ").strip().lower()
+            tags_with_notes_print(search_and_group_notes_by_tag(keyword, notes_book))
+            break
+        elif choice == "4":
             keyword = user_input_handler("Enter keyword from content: ").strip().lower()
             results = [note for note in notes_book.all_notes() if keyword in note.content.lower()]
-        elif choice == "4":
+        elif choice == "5":
             print(colorize_message("Search canceled.", "YELLOW"))
             return
         else:
@@ -203,9 +210,33 @@ def search_note(args, notes_book):
         if not results:
             print(colorize_message("No matching notes found.", "YELLOW"))
         else:
-            print(colorize_message("Search Results:", "CYAN"))
+            print(colorize_message("Search Results:", "GREEN"))
             print(generate_boxed_notes(results))
         return
+
+def search_and_group_notes_by_tag(q_tag, notes_book):
+    tag_to_notes = defaultdict(list)
+
+    for note in notes_book.all_notes():
+        for tag in note.tags:
+            tag_lower = tag.lower()
+            if q_tag in tag_lower:
+                tag_to_notes[tag].append(note)
+
+    result = {
+        key: sorted(tag_to_notes[key], key=lambda note: note.title.lower())
+        for key in sorted(tag_to_notes.keys(), key=str.lower)
+    }
+    return result
+
+def tags_with_notes_print(tags_with_notes):
+    if len(tags_with_notes)!=0:
+        print(colorize_message("Search Results:", "GREEN"))
+        for i, tag in enumerate(tags_with_notes):
+            print(f"     Tag {i+1} : '{tag}' set:")
+            print(generate_boxed_notes(tags_with_notes[tag]))
+    else: 
+        print(colorize_message(f"No tags with notes", "YELLOW"))
 
 def generate_boxed_notes(notes):
     """
