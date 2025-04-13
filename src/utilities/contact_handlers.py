@@ -55,7 +55,7 @@ def show_phone(args, book: AddressBook):
     record = book.find(name)
     if record is None:
         raise Exception(f"The contact {name} is not found")
-    message = f'{', '.join(record.get_phones)}'
+    message = f'{", ".join(record.get_phones)}'
     return colorize_message(message, "GREEN")
 
 def add_email(args, book):

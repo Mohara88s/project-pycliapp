@@ -16,13 +16,16 @@ class Note:
         self.tags = tags or []
 
     def __str__(self):
-        """
-        Return a colorized string representation of the note.
-        """
+    
+    # Return a colorized string representation of the note.
+    
         from utilities import colorize_message
+        title_str = colorize_message(f"Title: {self.title}", 'RED')
+        tags_str = colorize_message(f"Tags: {' '.join(self.tags)}", 'GREEN')
+        content_str = colorize_message(f"Content: {self.content}", 'CYAN')
         return (
-                f"{colorize_message(f'Title: {self.title}', 'RED')}\n"
-                f"{colorize_message(f'Tags: {" ".join(self.tags)}', 'GREEN')}\n"
-                f"{colorize_message(f'Content: {self.content}', 'CYAN')}\n"
-                + "-" * 30
+            f"{title_str}\n"
+            f"{tags_str}\n"
+            f"{content_str}\n"
+            + "-" * 30
         )
