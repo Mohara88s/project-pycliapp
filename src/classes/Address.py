@@ -2,7 +2,8 @@ from classes.Field import Field
 
 class Address(Field):
     def __init__(self, address):
-        self.value = self.address_validation(address)
+        validated_address = self.address_validation(address)
+        super().__init__(validated_address)
 
     @staticmethod
     def address_validation(address: str) -> str:

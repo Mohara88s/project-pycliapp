@@ -3,7 +3,8 @@ import re
 
 class Email(Field):
     def __init__(self, email):
-        self.value = self.email_validation(email)
+        validated_email = self.email_validation(email)
+        super().__init__(validated_email)
 
     def email_validation(self, email):
         # Email validation using regular expressions
