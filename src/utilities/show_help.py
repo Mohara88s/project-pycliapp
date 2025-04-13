@@ -1,4 +1,3 @@
-from utilities.colorize import colorize_message
 from rich.console import Console
 from rich.table import Table
 
