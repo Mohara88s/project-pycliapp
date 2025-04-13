@@ -11,7 +11,7 @@ def handle_search_contact(args, book):
     
     # Interactive mode
     while True:
-        search_type = user_input_handler("Enter the search type (name, phone, birthday, email): ").strip().lower()
+        search_type = user_input_handler(colorize_message("Enter the search type (name, phone, birthday, email): ", "GREEN")).strip().lower()
         if search_type in valid_search_types:
             break
         else:
@@ -19,11 +19,11 @@ def handle_search_contact(args, book):
     
     # Customize the query for the selected search type
     if search_type == "name":
-        search_term = user_input_handler("Enter name: ").strip()
+        search_term = user_input_handler(colorize_message("Enter name: ", "GREEN")).strip()
 
     elif search_type == "phone":
         while True:
-            search_term = user_input_handler("Enter phone (10 digits): ").strip()
+            search_term = user_input_handler(colorize_message("Enter phone (10 digits): ", "GREEN")).strip()
             try:
                 Phone(search_term)
                 break
@@ -32,7 +32,7 @@ def handle_search_contact(args, book):
 
     elif search_type == "birthday":
         while True:
-            search_term = user_input_handler("Enter date of birth to search (format DD.MM.YYYY): ").strip()
+            search_term = user_input_handler(colorize_message("Enter date of birth to search (format DD.MM.YYYY): ", "GREEN")).strip()
             if search_term.lower() == "exit":
                 return None
             
@@ -44,7 +44,7 @@ def handle_search_contact(args, book):
            
     elif search_type == "email":
         while True:
-            search_term = user_input_handler("Enter email: ").strip()
+            search_term = user_input_handler(colorize_message("Enter email: ", "GREEN")).strip()
             try:
                 Email(search_term)
                 break
