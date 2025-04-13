@@ -6,6 +6,10 @@ from classes.Email import Email
 from classes.Address import Address
  
 class Record:
+    """  
+    Represents a contact record with comprehensive personal information management.  
+    Includes full CRUD operations for phones, birthdays, emails, and addresses.  
+    """  
     def __init__(self, name):
         self.name = Name(name)
         self.phones = [] 
