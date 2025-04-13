@@ -71,13 +71,13 @@ def main():
             "handler": lambda args: print(delete_address(args, book)),
             "description": "Delete address in the format [delete-address [NAME]]"
         },
+        "search-note": {
+            "handler": lambda args: search_note(args, notes_book),
+            "description": "Search note by title, tag or content interactively"
+        },
         "add-note": {
             "handler": lambda args: print(add_note(args, notes_book)),
                 "description": "Add note interactively"
-        },
-        "note": {
-            "handler": lambda args: print(show_note(args, notes_book)),
-            "description": "Show note by title in the format [note [TITLE]]"
         },
         "all-notes": {
             "handler": lambda args: print(show_all_notes(notes_book)),
@@ -88,16 +88,12 @@ def main():
             "description": "Edit note interactively"
         },
         "delete-note": {
-            "handler": lambda args: print(delete_note(args, notes_book)),
-            "description": "Delete note by title in the format [delete-note [TITLE]]"
+            "handler": lambda args: delete_note(args, notes_book),
+            "description": "Delete note interactively"
         },
-        "search-notes": {
-            "handler": lambda args: notes_print(search_notes(args, notes_book)),
-            "description": "Search notes by title, tags or query in the format [search-note title: [TITLE]] or [search-note tags: [TAGS]] or [search-note [QUERY]]"
-        },
-        "search-notes-by-tag": {
-            "handler": lambda args: tags_with_notes_print(search_and_group_notes_by_tag(args, notes_book)),
-            "description": "Search sorted tags which are similar to query and connectet to them notes in the format [search-notes-by-tag [QUERY]]"
+        "delete-all-notes": {
+            "handler": lambda args: delete_all_notes(args, notes_book),
+            "description": "Delete all notes with confirmation"
         },
         "help": {
             "handler": lambda args: show_help(commands),
