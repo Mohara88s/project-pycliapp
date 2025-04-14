@@ -68,8 +68,10 @@ class AddressBook(UserDict):
         
         for record in self.data.values():
             # Search for name
-            if search_type == 'name' and search_term in ' '.join(word.lower() for word in record.name.value):
-                result_dict[record.name.value] = record
+            if search_type == 'name':
+                name_to_check = record.name.value.lower()
+                if search_term in name_to_check:
+                    result_dict[record.name.value] = record
             
             # search for phone
             elif search_type == 'phone':
