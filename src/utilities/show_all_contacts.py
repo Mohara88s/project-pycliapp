@@ -1,7 +1,9 @@
 from utilities.colorize import colorize_message
 from rich.console import Console
 from rich.table import Table
-
+"""
+Displays all contacts in a formatted rich table or shows a warning if empty.
+"""
 def show_all_contacts(contacts):
     if len(contacts)!=0:
         console = Console()

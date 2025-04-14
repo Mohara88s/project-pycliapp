@@ -1,6 +1,8 @@
 from rich.console import Console
 from rich.table import Table
-
+"""
+Displays a formatted help table of available commands using rich library styling.
+"""
 def show_help(commands):
     console = Console()
 

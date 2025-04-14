@@ -1,8 +1,19 @@
 from collections import namedtuple
 from classes import AddressBook, Record
 from utilities.colorize import colorize_message
+"""
+Contact Management System
 
+Provides complete CRUD operations for contact records including:
+- Personal information management
+- Phone number handling
+- Email/address management
+- Birthday tracking
+"""
 def add_contact(args, book: AddressBook):
+    """
+    Creates or updates a contact with basic information
+    """
     if len(args)<3:
         raise ValueError("Please give me the contact's first and last name and phone")
     first_name, last_name, phone, *_ = args
@@ -19,6 +30,9 @@ def add_contact(args, book: AddressBook):
 
 
 def change_contact(args, book: AddressBook):
+    """
+    Updates an existing contact's phone number
+    """
     if len(args)<4:
         raise ValueError("Please give me the contact's first and last name, old phone and new phone")
     first_name, last_name, phone, new_phone, *_ = args
@@ -32,6 +46,9 @@ def change_contact(args, book: AddressBook):
 
 
 def delete_contact(args, book: AddressBook):
+    """
+    Removes a contact completely from the address book
+    """
     if len(args)<2:
         raise ValueError("Please give me the contact's first and last name")
     first_name, last_name, *_ = args
@@ -41,6 +58,9 @@ def delete_contact(args, book: AddressBook):
     return colorize_message(message, "GREEN")
 
 def get_all_contacts(book: AddressBook):
+    """
+    Retrieves all contacts in a sorted, structured format
+    """
     list_of_contacts = []
     Contact_tuple = namedtuple('Contact', ['name', 'phones','birthday', 'email', 'address'])
     for name, record in book.get_all_records.items():
@@ -48,6 +68,9 @@ def get_all_contacts(book: AddressBook):
     return sorted(list_of_contacts)
 
 def show_phone(args, book: AddressBook):
+    """
+    Displays a contact's phone numbers
+    """
     if len(args)<2:
         raise ValueError("Please give me the contact's first and last name")
     first_name, last_name, *_ = args
@@ -59,6 +82,9 @@ def show_phone(args, book: AddressBook):
     return colorize_message(message, "GREEN")
 
 def add_email(args, book):
+    """
+    Adds an email address to a contact
+    """
     if len(args)<3:
         raise ValueError("Please give me the contact's first and last name and email")
     first_name, last_name, email = args
@@ -71,6 +97,9 @@ def add_email(args, book):
     return colorize_message(message, "GREEN")
     
 def add_address(args, book):
+    """
+    Adds a physical address to a contact
+    """
     if len(args)<3:
         raise ValueError("Please give me the contact's first and last name and address")
     first_name, last_name, *address = args
@@ -84,6 +113,9 @@ def add_address(args, book):
     return colorize_message(message, "GREEN")
 
 def edit_email(args, book):
+    """
+    Updates a contact's email address
+    """
     if len(args)<3:
         raise ValueError("Please give me the contact's first and last name and email")
     first_name, last_name, new_email = args
@@ -96,6 +128,9 @@ def edit_email(args, book):
     return colorize_message(message, "GREEN")
 
 def edit_address(args, book):
+    """
+    Updates a contact's physical address
+    """
     if len(args)<3:
         raise ValueError("Please give me the contact's first and last name and address")
     first_name, last_name, *new_address = args
@@ -109,6 +144,9 @@ def edit_address(args, book):
     return colorize_message(message, "GREEN")
 
 def delete_email(args, book: AddressBook):
+    """
+    Removes a contact's email address
+    """
     if len(args)<1:
         raise ValueError("Please give me the contact's email")
     email, *_ = args
@@ -117,6 +155,9 @@ def delete_email(args, book: AddressBook):
     return colorize_message(message, "GREEN")
 
 def delete_address(args, book: AddressBook):
+    """
+    Removes a contact's physical address
+    """
     if len(args) !=2:
         raise ValueError("Please give me the contact's first and last name")
 
@@ -133,6 +174,9 @@ def delete_address(args, book: AddressBook):
         return("Address not found for this contact")
     
 def edit_name(args, book):
+    """
+    Changes a contact's name
+    """
     if len(args)<4:
         raise ValueError("Please give me the contact's old first and last name and new first and last name")
     old_first_name, old_last_name, new_first_name, new_last_name, *_ = args
@@ -144,6 +188,9 @@ def edit_name(args, book):
 
 
 def add_birthday(args, book: AddressBook):
+    """
+    Sets/updates a contact's birthday
+    """
     if len(args)<3:
         raise ValueError(f"Please give me the contact's first and last name and birthday date")
     first_name, last_name, birthay, *_ = args
@@ -157,6 +204,9 @@ def add_birthday(args, book: AddressBook):
 
 
 def show_birthday(args, book: AddressBook):
+    """
+    Displays a contact's birthday
+    """
     if len(args)<2:
         raise ValueError(f"Please give me the contact's first and last name")
     first_name, last_name, *_ = args
@@ -171,6 +221,9 @@ def show_birthday(args, book: AddressBook):
 
 
 def get_upcoming_birthdays(args, book: AddressBook):
+    """
+    Retrieves contacts with birthdays within specified days
+    """
     days=365
     if len(args)>0:
         try:
@@ -184,6 +237,9 @@ def get_upcoming_birthdays(args, book: AddressBook):
     return list_of_birthdays
 
 def edit_birthday(args, book):
+    """
+    Updates a contact's birthday date
+    """
     if len(args)<3:
         raise ValueError("Please give me the contact's first and last name and birthday date")
     first_name, last_name, new_birthday, *_ = args
