@@ -140,7 +140,7 @@ def edit_address(args, book):
     if not record:
         return f"No contact found with name: {name}"
     record.edit_address(new_address_str)
-    message = f"Address for '{name}' updated to '{new_address}'"
+    message = f"Address for '{name}' updated to '{new_address_str}'"
     return colorize_message(message, "GREEN")
 
 def delete_email(args, book: AddressBook):

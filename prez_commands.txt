@@ -56,7 +56,7 @@ add-birthday Peter Parker 10.08.1998
 
 add-contact Natasha Romanoff 0662223311
 add-email Natasha Romanoff natasha.r@shield.gov
-add-address Natasha Romanoff Red Room Russia
+add-address Natasha Romanoff Red Room Donetsk Ukraine
 add-birthday Natasha Romanoff 30.11.1983
 
 add-contact Eduard Litvinchuk 0505551234
