@@ -23,7 +23,6 @@ def handle_search_contact(args, book):
     # Customize the query for the selected search type
     if search_type == "name":
         search_term = user_input_handler(colorize_message("Enter name: ", "GREEN")).strip()
-        print(search_term)
 
     elif search_type == "phone":
         while True:
