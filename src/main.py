@@ -1,7 +1,12 @@
 from utilities import *
 import os
-
+"""
+Assistant Bot - Contact and Notes Management System
+"""
 def main():
+    """
+    Main application loop for the Assistant Bot.
+    """
     commands = {
         "hello": {
             "handler": lambda args: print(colorize_message("How can I help you?", "GREEN")),

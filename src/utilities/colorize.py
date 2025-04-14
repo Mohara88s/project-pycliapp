@@ -1,4 +1,8 @@
 from colorama import Fore, init
+"""  
+    Provides colored console output using ANSI color codes.  
+    Includes predefined color palette and safe fallback for invalid colors.  
+    """  
 
 init(autoreset=True)
 COLORS_SET={
@@ -13,6 +17,9 @@ COLORS_SET={
     }
 
 def colorize_message(message, color):
+    """  
+    Applies colored formatting to text message for console output.  
+    """
     color=color.upper()
     if color in COLORS_SET.keys():
         return f"{COLORS_SET[color]}{message}{Fore.RESET}"

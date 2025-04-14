@@ -1,4 +1,7 @@
 from colorama import Fore, init
+"""
+Handles user input with colored prompt and automatic color reset.
+"""
 
 init(autoreset=True)
 

@@ -1,4 +1,9 @@
 from utilities.colorize import colorize_message
+"""
+Error Handling Utilities
+
+Provides standardized colored output for error messages with two severity levels.
+"""
 
 def error_handler(e):
     print(colorize_message(f"{e}", "RED"))

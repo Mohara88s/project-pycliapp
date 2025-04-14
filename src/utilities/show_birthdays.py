@@ -1,4 +1,7 @@
 from utilities.colorize import colorize_message
+"""
+Displays a formatted list of upcoming birthdays.
+"""
 
 def show_birthdays(birthdays):
     if len(birthdays)!=0:

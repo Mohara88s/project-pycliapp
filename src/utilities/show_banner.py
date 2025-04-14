@@ -2,6 +2,12 @@ import time
 import os
 from pyfiglet import Figlet
 from utilities.colorize import colorize_message
+"""
+Console Animation Utilities
+
+Provides functions for creating animated console banners and text effects.
+Includes console clearing capabilities and timed text animations.
+"""
 
 def clear_console():
     os.system("cls" if os.name == "nt" else "clear")
